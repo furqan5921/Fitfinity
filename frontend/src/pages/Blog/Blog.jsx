@@ -70,25 +70,23 @@ const Blog = () => {
           </Box>
         </Flex>
         <Text as="b">RECENT POSTS</Text>
-        {/* <Flex> */}
         <Grid w={"75%"} m="auto" templateColumns="repeat(4, 1fr)" gap={6}>
-          <GridItem
-            w="100%"
-            p={"15px"}
-            borderRadius={"10px"}
-            boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
-          >
-            <Image
+          {recentPost.map((el, i) => {
+            <GridItem
+              key={i}
+              w="100%"
+              p={"15px"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/11/Blog-Img-DB.png"
-            />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              Mastering Diabetes with Cronometer
-            </Text>
-            <Text>December 1, 2022</Text>
-          </GridItem>
+              boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+            >
+              <Image borderRadius={"10px"} src={el.image} />
+              <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+                {el.text}
+              </Text>
+              <Text>{el.date}</Text>
+            </GridItem>;
+          })}
         </Grid>
-        {/* </Flex> */}
       </Box>
     </>
   );
