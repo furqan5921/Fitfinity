@@ -166,10 +166,8 @@ const Blog = () => {
         </InputGroup>
       </Box>
 
-      <Box bg="grey">
-        <br />
-        <br />
-        <Flex w={"75%"} m={"auto"} gap={"20%"}>
+      <Box padding={"100px 0px"}>
+        <Flex w={"70%"} m={"auto"} gap={"20%"}>
           <Box W={"35%"}>
             <Text>CRONO HACKS</Text>
             <Heading>Cronometer Tips & Tricks</Heading>
@@ -187,7 +185,7 @@ const Blog = () => {
             />
           </Box>
         </Flex>
-        <Flex w={"75%"} m={"auto"} gap={"20%"}>
+        <Flex w={"70%"} m={"auto"} gap={"20%"}>
           <Box w={"45%"}>
             <Image
               w="90%"
@@ -205,8 +203,23 @@ const Blog = () => {
             <Button bg={"#ff6733"}>SEE WHAT'S NEW</Button>
           </Box>
         </Flex>
-        <br />
-        <br />
+      </Box>
+
+      <Box bg="#262a3b" padding={"50px 0px"}>
+        <Flex w="65%" m="auto" justifyContent={"space-between"}>
+          <Box w={"40%"}>
+            <Heading color="white">Eat smarter. Live better.</Heading>
+            <Text color="white" fontSize={"xl"} fontWeight="medium">
+              Track your foods, exercise, and health data with the Cronometer
+              app.
+            </Text>
+          </Box>
+          <Box m="auto">
+            <Button fontSize={"xl"} bg={"#44d07b"} p="15px 35px">
+              Sign Up - It's Free
+            </Button>
+          </Box>
+        </Flex>
       </Box>
 
       <br />
