@@ -9,7 +9,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-// import ArrowForwardIcon from "@chakra-ui/icons";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import React from "react";
 import styles from "./Blog.module.css";
 
