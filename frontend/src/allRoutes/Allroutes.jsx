@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from '../pages/Dashboard/Dashboard'
@@ -11,4 +12,5 @@ const Allroutes = () => {
   )
 }
 
-export default Allroutes
+
+export default Allroutes;
