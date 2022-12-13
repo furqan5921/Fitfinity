@@ -5,11 +5,15 @@ import {
   Grid,
   GridItem,
   Heading,
+  HStack,
   Image,
+  Input,
+  InputGroup,
+  InputRightElement,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon, SearchIcon } from "@chakra-ui/icons";
 import React from "react";
 import styles from "./Blog.module.css";
 
@@ -46,7 +50,7 @@ const Blog = () => {
       <Box>
         <Flex
           w={"75%"}
-          border={"1px solid red"}
+          boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
           m={"auto"}
           p={"3%"}
           gap={"10%"}
@@ -71,7 +75,9 @@ const Blog = () => {
             ></video>
           </Box>
         </Flex>
+
         <Text as="b">RECENT POSTS</Text>
+
         <Grid w={"75%"} m="auto" templateColumns="repeat(4, 1fr)" gap={6}>
           <GridItem className={styles.gridItems}>
             <Image
@@ -127,6 +133,88 @@ const Blog = () => {
         </Grid>
         <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
       </Box>
+
+      <Box bg={"#f0f2fa"} m={"auto"} padding={"40px 0px"}>
+        <Heading textAlign={"center"}>Blog Archives</Heading>
+        <br />
+        <HStack w={"60%"} m={"auto"} justifyContent={"space-between"}>
+          <Text as={"b"} fontSize={"xl"}>
+            NUTRITION
+          </Text>
+          <Text as={"b"} fontSize={"xl"}>
+            FITNESS
+          </Text>
+          <Text as={"b"} fontSize={"xl"}>
+            FEATURES
+          </Text>
+          <Text as={"b"} fontSize={"xl"}>
+            RECIPES
+          </Text>
+          <Text as={"b"} fontSize={"xl"}>
+            APP UPDATES
+          </Text>
+        </HStack>
+        <br />
+        <InputGroup w={"75%"} m={"auto"}>
+          <Input bg={"white"} type="text" placeholder="Search Blog posts..." />
+          <InputRightElement
+            // pointerEvents="none"
+            bg={"#ff6733"}
+            borderRadius={"5px"}
+            children={<SearchIcon color="white" />}
+          />
+        </InputGroup>
+      </Box>
+
+      <Box bg="grey">
+        <br />
+        <br />
+        <Flex w={"75%"} m={"auto"} gap={"20%"}>
+          <Box W={"35%"}>
+            <Text>CRONO HACKS</Text>
+            <Heading>Cronometer Tips & Tricks</Heading>
+            <Text>
+              Whether you’re a new or longtime user, here are some helpful tips
+              to make the most of your nutrition tracking.
+            </Text>
+            <Button bg={"#ff6733"}>GRT THIS TIPS</Button>
+          </Box>
+          <Box w={"45%"}>
+            <Image
+              w="90%"
+              textAlign={"center"}
+              src="https://cronometer.com/blog/wp-content/uploads/2022/11/tips-and-tricks-icon-2.png"
+            />
+          </Box>
+        </Flex>
+        <Flex w={"75%"} m={"auto"} gap={"20%"}>
+          <Box w={"45%"}>
+            <Image
+              w="90%"
+              textAlign={"center"}
+              src="https://cronometer.com/blog/wp-content/uploads/2022/11/tips-and-tricks-icon-2.png"
+            />
+          </Box>
+          <Box W={"35%"}>
+            <Text>APP UPDATES</Text>
+            <Heading>New & Improved: The Latest Updates</Heading>
+            <Text>
+              Get up to date on all of the latest Cronometer updates, including
+              cool new features like our Recipe Importer or Target Scheduler!
+            </Text>
+            <Button bg={"#ff6733"}>SEE WHAT'S NEW</Button>
+          </Box>
+        </Flex>
+        <br />
+        <br />
+      </Box>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 };
