@@ -265,6 +265,116 @@ const Blog = () => {
             <Text>April 26, 2022</Text>
           </Box>
         </Flex>
+        <Button bg="white" rightIcon={<ArrowForwardIcon />}>
+          VIEW MORE
+        </Button>
+        <br />
+        <br />
+
+        <Text as="b">APP UPDATES</Text>
+
+        <Grid w={"75%"} m="auto" templateColumns="repeat(4, 1fr)" gap={6}>
+          <GridItem className={styles.gridItems}>
+            <Image
+              h={"150px"}
+              w={"100%"}
+              borderRadius={"10px"}
+              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Suunto.png"
+            />
+            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+              New Device Integration: Suunto
+            </Text>
+            <Text>June 14, 2022</Text>
+          </GridItem>
+
+          <GridItem className={styles.gridItems}>
+            <Image
+              h={"150px"}
+              w={"100%"}
+              borderRadius={"10px"}
+              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Heart-rate-symbol.png"
+            />
+            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+              How To: Track Your Heart Rate Over Time
+            </Text>
+            <Text>June 6, 2022</Text>
+          </GridItem>
+
+          <GridItem className={styles.gridItems}>
+            <Image
+              h={"150px"}
+              w={"100%"}
+              borderRadius={"10px"}
+              src="https://cronometer.com/blog/wp-content/uploads/2022/05/Apple-watch-app-low-res.jpeg"
+            />
+            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+              Now Available: Cronometer On Your Apple Watch
+            </Text>
+            <Text>June 1, 2022</Text>
+          </GridItem>
+
+          <GridItem className={styles.gridItems}>
+            <Image
+              h={"150px"}
+              w={"100%"}
+              borderRadius={"10px"}
+              src="https://cronometer.com/blog/wp-content/uploads/2022/04/pexels-kampus-production-5920765-scaled.jpg"
+            />
+            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+              Introducing Men’s Health Nutrition Score
+            </Text>
+            <Text>May 31, 2022</Text>
+          </GridItem>
+        </Grid>
+        <Button bg="white" rightIcon={<ArrowForwardIcon />}>
+          VIEW MORE
+        </Button>
+        <br />
+        <br />
+
+        <Text>COMMUNITY</Text>
+        <Heading>Know Yourself</Heading>
+        <Flex w="75%" m="auto" gap={"4%"} justifyContent={"space-between"}>
+          <Box
+            borderRadius={"10px"}
+            bg={"white"}
+            w="48%"
+            boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+            p="2%"
+          >
+            <Image
+              height="300px"
+              borderRadius={"10px"}
+              w="100%"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/03/20211010_122543-Copy-scaled-e1648237252449.jpeg"
+            />
+            <Text fontSize={"xl"} fontWeight={"extrabold"}>
+              Meet Alex Marshall: Nutrition Coach & Know Yourself Ambassador
+            </Text>
+            <Text>Marxh 25, 2022</Text>
+          </Box>
+          <Box
+            borderRadius={"10px"}
+            bg={"white"}
+            w="48%"
+            boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+            p="2%"
+          >
+            <Image
+              height="300px"
+              borderRadius={"10px"}
+              w="100%"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/01/Shirondale.jpg"
+            />
+            <Text fontSize={"xl"} fontWeight={"extrabold"}>
+              Meet Shirondale: Know Yourself Ambassador
+            </Text>
+            <Text>January 14, 2022</Text>
+          </Box>
+        </Flex>
+        <Button bg="white" rightIcon={<ArrowForwardIcon />}>
+          VIEW MORE
+        </Button>
       </Box>
 
       <br />
