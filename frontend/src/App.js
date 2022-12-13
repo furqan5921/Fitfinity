@@ -1,13 +1,16 @@
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Home from "./pages/Home/Home";
+
+
+
+import Allroutes from "./allRoutes/Allroutes";
+
 
 function App() {
-  return (
-    <div>
-      
-    </div>
-  );
-}
+  return <div >
+    {/* Home */}
+<Allroutes />
+
+  </div>;
+
+
 
 export default App;
