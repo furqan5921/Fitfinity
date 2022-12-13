@@ -9,11 +9,11 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ChakraProvider>
-    <Provider>
+    {/* <Provider> */}
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>
+    {/* </Provider> */}
   </ChakraProvider>
 );
 
