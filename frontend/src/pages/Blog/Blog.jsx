@@ -377,6 +377,33 @@ const Blog = () => {
         </Button>
       </Box>
 
+      <Box>
+        <Flex w="75%" m="auto" gap="8%" justifyContent={"space-between"}>
+          <Flex w="46%" flexDirection={"column"} justifyContent="center">
+            <Heading>
+              Track your food, exercise and health metrics with the Cronometer
+              app.
+            </Heading>
+            <br />
+            <Button
+              w="30%"
+              fontSize={"xl"}
+              color="white"
+              bg="#ff6733"
+              // p={"10px 35px"}
+            >
+              SIGN UP
+            </Button>
+          </Flex>
+          <Box w="46%">
+            <Image
+              w="70%"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/11/crono-app.png"
+            />
+          </Box>
+        </Flex>
+      </Box>
+
       <br />
       <br />
       <br />
