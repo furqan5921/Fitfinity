@@ -1,3 +1,4 @@
+
 import Allroutes from "./allRoutes/Allroutes";
 
 
@@ -7,6 +8,6 @@ function App() {
 <Allroutes />
 
   </div>;
-}
+
 
 export default App;
