@@ -208,7 +208,9 @@ const Blog = () => {
       <Box bg="#262a3b" padding={"50px 0px"}>
         <Flex w="65%" m="auto" justifyContent={"space-between"}>
           <Box w={"40%"}>
-            <Heading color="white">Eat smarter. Live better.</Heading>
+            <Text fontSize={"5xl"} color="white" fontWeight={"extrabold"}>
+              Eat smarter. Live better.
+            </Text>
             <Text color="white" fontSize={"xl"} fontWeight="medium">
               Track your foods, exercise, and health data with the Cronometer
               app.
@@ -218,6 +220,49 @@ const Blog = () => {
             <Button fontSize={"xl"} bg={"#44d07b"} p="15px 35px">
               Sign Up - It's Free
             </Button>
+          </Box>
+        </Flex>
+      </Box>
+
+      <Box bg={"#f0f2fa"}>
+        <Text>ON TREND</Text>
+        <Heading>Popular Stories</Heading>
+        <Flex w="75%" m="auto" gap={"4%"} justifyContent={"space-between"}>
+          <Box
+            borderRadius={"10px"}
+            bg={"white"}
+            w="48%"
+            boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+            p="2%"
+          >
+            <Image
+              height="300px"
+              borderRadius={"10px"}
+              w="100%"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/04/Untitled-design-6.png"
+            />
+            <Text fontSize={"xl"} fontWeight={"extrabold"}>
+              Dietitians Discuss Diet And Eczema
+            </Text>
+            <Text>April 27, 2022</Text>
+          </Box>
+          <Box
+            borderRadius={"10px"}
+            bg={"white"}
+            w="48%"
+            boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+            p="2%"
+          >
+            <Image
+              height="300px"
+              borderRadius={"10px"}
+              w="100%"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/04/IMG_7610-scaled.jpg"
+            />
+            <Text fontSize={"xl"} fontWeight={"extrabold"}>
+              How Can Diet & Nutrition Affect Acne
+            </Text>
+            <Text>April 26, 2022</Text>
           </Box>
         </Flex>
       </Box>
