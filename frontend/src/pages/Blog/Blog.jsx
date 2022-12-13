@@ -9,6 +9,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+// import ArrowForwardIcon from "@chakra-ui/icons";
 import React from "react";
 import styles from "./Blog.module.css";
 
@@ -70,9 +71,7 @@ const Blog = () => {
             ></video>
           </Box>
         </Flex>
-        <Text as="b" w="75%" m={"auto"}>
-          RECENT POSTS
-        </Text>
+        <Text as="b">RECENT POSTS</Text>
         <Grid w={"75%"} m="auto" templateColumns="repeat(4, 1fr)" gap={6}>
           <GridItem className={styles.gridItems}>
             <Image
@@ -126,33 +125,10 @@ const Blog = () => {
             <Text>October 27, 2022</Text>
           </GridItem>
         </Grid>
+        <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
       </Box>
     </>
   );
 };
 
 export default Blog;
-
-{
-  /* <GridItem w="100%">
-            <Image src="https://cronometer.com/blog/wp-content/uploads/2022/09/cronometer-new-logo@2x.png" />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              Our New Look: The Details Behind Cronometer’s Makeover
-            </Text>
-            <Text>November 14, 2022</Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Image src="https://cronometer.com/blog/wp-content/uploads/2022/06/Blog-Img-New-Improved.png" />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              New & Improved: The Latest Cronometer Updates
-            </Text>
-            <Text>November 14, 2022</Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Image src="https://cronometer.com/blog/wp-content/uploads/2022/10/Blog-Img-Gummy-Bears.png" />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              A Look Into Sugar-Free Sensitivities
-            </Text>
-            <Text>October 27, 2022</Text>
-          </GridItem> */
-}
