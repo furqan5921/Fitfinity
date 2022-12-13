@@ -1,13 +1,13 @@
-import Blog from "./pages/Blog/Blog";
-import Faltu from "./pages/Blog/faltu";
+
+import Allroutes from "./allRoutes/Allroutes";
+
 
 function App() {
-  return (
-    <div>
-      <Blog />
-      {/* <Faltu /> */}
-    </div>
-  );
-}
+  return <div >
+    {/* Home */}
+<Allroutes />
+
+  </div>;
+
 
 export default App;
