@@ -47,12 +47,31 @@ import styles from "./Blog.module.css";
 const Blog = () => {
   return (
     <>
-      <Box>
-        <Flex
+      <Box className={styles.heading}>
+        <Text
+          textAlign={"center"}
+          fontSize={["2xl", "4xl", "5xl"]}
+          color={"white"}
+          fontWeight={"extrabold"}
+        >
+          Cronometer Blog
+        </Text>
+        <Text
+          textAlign={"center"}
+          as="b"
+          fontSize={["s", "m", "xl"]}
+          color="white"
+        >
+          App Updates, Nutrition Tips & Inspiration
+        </Text>
+        <Box
           w={"75%"}
+          display={["block,block,flex"]}
           boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
           m={"auto"}
           p={"3%"}
+          bg="white"
+          borderRadius={"10px"}
           gap={"10%"}
         >
           <VStack w={"45%"}>
@@ -74,11 +93,20 @@ const Blog = () => {
               controls
             ></video>
           </Box>
-        </Flex>
+        </Box>
 
         <Text as="b">RECENT POSTS</Text>
 
-        <Grid w={"75%"} m="auto" templateColumns="repeat(4, 1fr)" gap={6}>
+        <Grid
+          w={"75%"}
+          m="auto"
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
+          gap={6}
+        >
           <GridItem className={styles.gridItems}>
             <Image
               h={"150px"}
@@ -99,7 +127,7 @@ const Blog = () => {
               borderRadius={"10px"}
               src="https://cronometer.com/blog/wp-content/uploads/2022/09/cronometer-new-logo@2x.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               Our New Look: The Details Behind Cronometer’s Makeover
             </Text>
             <Text>November 14, 2022</Text>
@@ -112,7 +140,7 @@ const Blog = () => {
               borderRadius={"10px"}
               src="https://cronometer.com/blog/wp-content/uploads/2022/06/Blog-Img-New-Improved.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               New & Improved: The Latest Cronometer Updates
             </Text>
             <Text>November 14, 2022</Text>
@@ -131,7 +159,9 @@ const Blog = () => {
             <Text>October 27, 2022</Text>
           </GridItem>
         </Grid>
-        <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        <Box w="75%" m="auto">
+          <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        </Box>
       </Box>
 
       <Box bg={"#f0f2fa"} m={"auto"} padding={"40px 0px"}>
@@ -265,15 +295,24 @@ const Blog = () => {
             <Text>April 26, 2022</Text>
           </Box>
         </Flex>
-        <Button bg="white" rightIcon={<ArrowForwardIcon />}>
-          VIEW MORE
-        </Button>
+        <Box w="75%" m="auto">
+          <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        </Box>
         <br />
         <br />
 
         <Text as="b">APP UPDATES</Text>
 
-        <Grid w={"75%"} m="auto" templateColumns="repeat(4, 1fr)" gap={6}>
+        <Grid
+          w={"75%"}
+          m="auto"
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
+          gap={6}
+        >
           <GridItem className={styles.gridItems}>
             <Image
               h={"150px"}
@@ -326,9 +365,9 @@ const Blog = () => {
             <Text>May 31, 2022</Text>
           </GridItem>
         </Grid>
-        <Button bg="white" rightIcon={<ArrowForwardIcon />}>
-          VIEW MORE
-        </Button>
+        <Box w="75%" m="auto">
+          <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        </Box>
         <br />
         <br />
 
@@ -372,9 +411,9 @@ const Blog = () => {
             <Text>January 14, 2022</Text>
           </Box>
         </Flex>
-        <Button bg="white" rightIcon={<ArrowForwardIcon />}>
-          VIEW MORE
-        </Button>
+        <Box w="75%" m="auto">
+          <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        </Box>
       </Box>
 
       <Box>
@@ -385,13 +424,7 @@ const Blog = () => {
               app.
             </Heading>
             <br />
-            <Button
-              w="30%"
-              fontSize={"xl"}
-              color="white"
-              bg="#ff6733"
-              // p={"10px 35px"}
-            >
+            <Button w="30%" fontSize={"xl"} color="white" bg="#ff6733">
               SIGN UP
             </Button>
           </Flex>
