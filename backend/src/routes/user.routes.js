@@ -41,7 +41,7 @@ app.post('/signup', async (req, res) => {
                 await otpModel.findOneAndUpdate({ email }, { $set: { otp } })
                 return res.send({ message: 'otp updated' })
             }
-            
+
             const sentOtp = new otpModel({ email, otp })
             await sentOtp.save()
             return res.send({ message: 'OTP Sent' })
@@ -67,6 +67,42 @@ app.post('/otp', async (req, res) => {
             } else {
                 return res.send({ message: 'wrong otp' })
             }
+        }
+
+    } catch (e) {
+        return res.status(500).send(e.message)
+    }
+})
+
+app.post('/resendOtp', async (req, res) => {
+    const { email } = req.body;
+
+    try {
+
+        const otp = Math.floor(1000 + Math.random() * 9000);
+        let existingUser = await userModel.findOne({ email });
+        if (existingUser && existingUser.otpVerified === false) {
+
+            transporter.sendMail({
+                to: email,
+                from: process.env.EMAIL,
+                subject: 'OTP Verification',
+                text: `Please enter this OTP ${otp}`
+            }).then(async () => {
+
+                const existingOtp = await otpModel.find({ email })
+                if (existingOtp.length) {
+                    await otpModel.findOneAndUpdate({ email }, { $set: { otp } })
+                    return res.send({ message: 'otp updated' })
+                }
+
+                const sentOtp = new otpModel({ email, otp })
+                await sentOtp.save()
+                return res.send({ message: 'OTP Sent' })
+            })
+
+        } else {
+            return res.send({ message: 'user already verified' })
         }
 
     } catch (e) {
