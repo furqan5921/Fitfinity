@@ -9,9 +9,10 @@ const userSchema = new Schema({
     weight: { type: String, required: true },
     role: {
         type: String,
-        enum: ["base", "premium"],
-        default: "base"
-    }
+        enum: ["basic", "gold", "pro"],
+        default: "basic"
+    },
+    otpVerified: { type: Boolean, default: false }
 })
 
 const userModel = model('users', userSchema)
