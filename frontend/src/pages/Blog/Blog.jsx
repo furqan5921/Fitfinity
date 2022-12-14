@@ -296,7 +296,7 @@ const Blog = () => {
               app.
             </Text>
           </Box>
-          <Box m="auto" w={["35%", "85%", "75%"]}>
+          <Box m="auto" w={["35%", "85%", "10%"]}>
             <Button
               fontSize={["m", "l", "xl"]}
               bg={"#44d07b"}
