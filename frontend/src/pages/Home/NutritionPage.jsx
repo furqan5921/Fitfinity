@@ -45,7 +45,7 @@ const NutritionPage = () => {
     <Box p="4%" bg={"rgb(255,255,255)"}>
       <Box w="80%" m="auto">
         <Box w={["100%", "100%", "60%", "50%"]} m="auto">
-          <Heading textAlign={"center"} size={["lg", "lg", "xl", "xl"]} variant={"h1"}>
+          <Heading textAlign={"center"} size={["lg", "lg", "xl", "xl"]} as={"h1"}>
             Develop healthy habits
           </Heading>
           <Text textAlign={"center"} fontSize={["sm", "sm", "xl", "xl"]}>
@@ -53,7 +53,7 @@ const NutritionPage = () => {
             your progress over time.
           </Text>
         </Box>
-        <Box p={"1rem"}>
+        <Box p={"1rem"} mt="3rem">
           <Grid
             templateColumns={[
               "repeat(1,1fr)",
@@ -70,13 +70,14 @@ const NutritionPage = () => {
                   <Heading
                     textAlign={"center"}
                     size={["sm", "md", "lg", "lg"]}
-                    variant={"h1"}
+                    as={"h1"}
                   >
                     {title}
                   </Heading>
                   <Text
                     textAlign={"center"}
                     fontSize={["sm", "sm", "sm", "lg"]}
+                    
                   >
                     {desc}
                   </Text>

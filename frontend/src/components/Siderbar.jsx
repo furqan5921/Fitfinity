@@ -18,7 +18,7 @@ import {
   IconButton
 } from '@chakra-ui/react';
 import { SidebarContent } from './SidebarContent';
-import { FiBell, FiChevronDown, FiMenu } from 'react-icons/fi';
+import { /*FiBell*/ FiChevronDown, FiMenu } from 'react-icons/fi';
 import {AiTwotoneSound} from 'react-icons/ai';
 
 
