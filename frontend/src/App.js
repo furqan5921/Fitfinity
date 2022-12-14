@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       {/* Home */}
-      <Navbar />
+      {/* <Navbar /> */}
       <Sidebar />
       <Allroutes />
     </div>

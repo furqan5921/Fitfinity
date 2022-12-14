@@ -24,7 +24,7 @@ app.post('/signup', async (req, res) => {
     try {
         const otp = Math.floor(1000 + Math.random() * 9000);
         let existingUser = await userModel.findOne({ email });
-        if (existingUser) return res.status(400).send('user already exists')
+        if (existingUser) return res.send('user already exists')
 
         const newUser = new userModel({ email, password, sex, birthday, height, weight });
         await newUser.save()
