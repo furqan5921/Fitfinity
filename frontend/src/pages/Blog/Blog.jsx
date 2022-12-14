@@ -109,7 +109,7 @@ const Blog = () => {
         <Text as="b">RECENT POSTS</Text>
 
         <Grid
-          w={"75%"}
+          w={["90%", "85%", "75%"]}
           m="auto"
           templateColumns={[
             "repeat(1, 1fr)",
@@ -268,28 +268,49 @@ const Blog = () => {
       </Box>
 
       <Box bg="#262a3b" padding={"50px 0px"}>
-        <Flex w="65%" m="auto" justifyContent={"space-between"}>
-          <Box w={"40%"}>
-            <Text fontSize={"5xl"} color="white" fontWeight={"extrabold"}>
+        <Flex
+          w={["90%", "85%", "65%"]}
+          m="auto"
+          justifyContent={"space-between"}
+        >
+          <Box w={["70%", "60%", "40%"]}>
+            <Text
+              fontSize={["xl", "3xl", "5xl"]}
+              color="white"
+              fontWeight={"extrabold"}
+            >
               Eat smarter. Live better.
             </Text>
-            <Text color="white" fontSize={"xl"} fontWeight="medium">
+            <Text color="white" fontSize={["m", "l", "xl"]} fontWeight="medium">
               Track your foods, exercise, and health data with the Cronometer
               app.
             </Text>
           </Box>
-          <Box m="auto">
-            <Button fontSize={"xl"} bg={"#44d07b"} p="15px 35px">
+          <Box m="auto" w={["90%", "85%", "75%"]}>
+            <Button
+              fontSize={["m", "l", "xl"]}
+              bg={"#44d07b"}
+              p={["5px 10px", "10px 20px", "15px 35px"]}
+            >
               Sign Up - It's Free
             </Button>
           </Box>
+          <br />
         </Flex>
       </Box>
 
       <Box bg={"#f0f2fa"}>
         <Text>ON TREND</Text>
-        <Heading>Popular Stories</Heading>
-        <Flex w="75%" m="auto" gap={"4%"} justifyContent={"space-between"}>
+        <Heading textAlign={["center", "center", "left"]}>
+          Popular Stories
+        </Heading>
+        <br />
+        <Flex
+          w={["90%", "85%", "75%"]}
+          m="auto"
+          gap={"4%"}
+          justifyContent={"space-between"}
+        >
           <Box
             borderRadius={"10px"}
             bg={"white"}
@@ -298,12 +319,12 @@ const Blog = () => {
             p="2%"
           >
             <Image
-              height="300px"
+              height={["200px", "250px", "300px"]}
               borderRadius={"10px"}
               w="100%"
               src="https://cronometer.com/blog/wp-content/uploads/2022/04/Untitled-design-6.png"
             />
-            <Text fontSize={"xl"} fontWeight={"extrabold"}>
+            <Text fontSize={["l", "xl", "xl"]} fontWeight={"extrabold"}>
               Dietitians Discuss Diet And Eczema
             </Text>
             <Text>April 27, 2022</Text>
@@ -316,19 +337,22 @@ const Blog = () => {
             p="2%"
           >
             <Image
-              height="300px"
+              height={["200px", "250px", "300px"]}
               borderRadius={"10px"}
               w="100%"
               src="https://cronometer.com/blog/wp-content/uploads/2022/04/IMG_7610-scaled.jpg"
             />
-            <Text fontSize={"xl"} fontWeight={"extrabold"}>
+            <Text fontSize={["l", "xl", "xl"]} fontWeight={"extrabold"}>
               How Can Diet & Nutrition Affect Acne
             </Text>
             <Text>April 26, 2022</Text>
           </Box>
         </Flex>
-        <Box w="75%" m="auto">
-          <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        <br />
+        <Box w={["90%", "85%", "75%"]} m="auto">
+          <Button bg={"white"} rightIcon={<ArrowForwardIcon />}>
+            VIEW MORE
+          </Button>
         </Box>
         <br />
         <br />
@@ -336,7 +360,7 @@ const Blog = () => {
         <Text as="b">APP UPDATES</Text>
 
         <Grid
-          w={"75%"}
+          w={["90%", "85%", "75%"]}
           m="auto"
           templateColumns={[
             "repeat(1, 1fr)",
@@ -350,12 +374,12 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Suunto.png"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/11/Blog-Img-DB.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              New Device Integration: Suunto
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
+              Mastering Diabetes with Cronometer
             </Text>
-            <Text>June 14, 2022</Text>
+            <Text>December 1, 2022</Text>
           </GridItem>
 
           <GridItem className={styles.gridItems}>
@@ -363,12 +387,12 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Heart-rate-symbol.png"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/09/cronometer-new-logo@2x.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              How To: Track Your Heart Rate Over Time
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
+              Our New Look: The Details Behind Cronometer’s Makeover
             </Text>
-            <Text>June 6, 2022</Text>
+            <Text>November 14, 2022</Text>
           </GridItem>
 
           <GridItem className={styles.gridItems}>
@@ -376,12 +400,12 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/05/Apple-watch-app-low-res.jpeg"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Blog-Img-New-Improved.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              Now Available: Cronometer On Your Apple Watch
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
+              New & Improved: The Latest Cronometer Updates
             </Text>
-            <Text>June 1, 2022</Text>
+            <Text>November 14, 2022</Text>
           </GridItem>
 
           <GridItem className={styles.gridItems}>
@@ -389,23 +413,34 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/04/pexels-kampus-production-5920765-scaled.jpg"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/10/Blog-Img-Gummy-Bears.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
-              Introducing Men’s Health Nutrition Score
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
+              A Look Into Sugar-Free Sensitivities
             </Text>
-            <Text>May 31, 2022</Text>
+            <Text>October 27, 2022</Text>
           </GridItem>
         </Grid>
-        <Box w="75%" m="auto">
-          <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        <br />
+        <Box w={["90%", "85%", "75%"]} m="auto">
+          <Button bg="white" rightIcon={<ArrowForwardIcon />}>
+            VIEW MORE
+          </Button>
         </Box>
         <br />
         <br />
 
         <Text>COMMUNITY</Text>
-        <Heading>Know Yourself</Heading>
-        <Flex w="75%" m="auto" gap={"4%"} justifyContent={"space-between"}>
+        <Heading textAlign={["center", "center", "left"]}>
+          Popular Stories
+        </Heading>
+        <br />
+        <Flex
+          w={["90%", "85%", "75%"]}
+          m="auto"
+          gap={"4%"}
+          justifyContent={"space-between"}
+        >
           <Box
             borderRadius={"10px"}
             bg={"white"}
@@ -414,15 +449,15 @@ const Blog = () => {
             p="2%"
           >
             <Image
-              height="300px"
+              height={["200px", "250px", "300px"]}
               borderRadius={"10px"}
               w="100%"
-              src="https://cronometer.com/blog/wp-content/uploads/2022/03/20211010_122543-Copy-scaled-e1648237252449.jpeg"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/04/Untitled-design-6.png"
             />
-            <Text fontSize={"xl"} fontWeight={"extrabold"}>
-              Meet Alex Marshall: Nutrition Coach & Know Yourself Ambassador
+            <Text fontSize={["l", "xl", "xl"]} fontWeight={"extrabold"}>
+              Dietitians Discuss Diet And Eczema
             </Text>
-            <Text>Marxh 25, 2022</Text>
+            <Text>April 27, 2022</Text>
           </Box>
           <Box
             borderRadius={"10px"}
@@ -432,19 +467,22 @@ const Blog = () => {
             p="2%"
           >
             <Image
-              height="300px"
+              height={["200px", "250px", "300px"]}
               borderRadius={"10px"}
               w="100%"
-              src="https://cronometer.com/blog/wp-content/uploads/2022/01/Shirondale.jpg"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/04/IMG_7610-scaled.jpg"
             />
-            <Text fontSize={"xl"} fontWeight={"extrabold"}>
-              Meet Shirondale: Know Yourself Ambassador
+            <Text fontSize={["l", "xl", "xl"]} fontWeight={"extrabold"}>
+              How Can Diet & Nutrition Affect Acne
             </Text>
-            <Text>January 14, 2022</Text>
+            <Text>April 26, 2022</Text>
           </Box>
         </Flex>
-        <Box w="75%" m="auto">
-          <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
+        <br />
+        <Box w={["90%", "85%", "75%"]} m="auto">
+          <Button bg={"white"} rightIcon={<ArrowForwardIcon />}>
+            VIEW MORE
+          </Button>
         </Box>
       </Box>
 
