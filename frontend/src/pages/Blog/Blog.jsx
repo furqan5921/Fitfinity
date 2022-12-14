@@ -311,8 +311,14 @@ const Blog = () => {
       </Box>
 
       <Box bg={"#f0f2fa"}>
-        <Text>ON TREND</Text>
-        <Heading textAlign={["center", "center", "left"]}>
+        <Text w={["90%", "85%", "75%"]} m="auto">
+          ON TREND
+        </Text>
+        <Heading
+          w={["90%", "85%", "75%"]}
+          m="auto"
+          textAlign={["center", "center", "left"]}
+        >
           Popular Stories
         </Heading>
         <br />
@@ -368,7 +374,10 @@ const Blog = () => {
         <br />
         <br />
 
-        <Text as="b">APP UPDATES</Text>
+        <Text w={["90%", "85%", "75%"]} m="auto">
+          APP UPDATES
+        </Text>
+        <br />
 
         <Grid
           w={["90%", "85%", "75%"]}
@@ -441,8 +450,14 @@ const Blog = () => {
         <br />
         <br />
 
-        <Text>COMMUNITY</Text>
-        <Heading textAlign={["center", "center", "left"]}>
+        <Text w={["90%", "85%", "75%"]} m="auto">
+          COMMUNITY
+        </Text>
+        <Heading
+          w={["90%", "85%", "75%"]}
+          m="auto"
+          textAlign={["center", "center", "left"]}
+        >
           Popular Stories
         </Heading>
         <br />
