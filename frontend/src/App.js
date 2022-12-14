@@ -1,20 +1,17 @@
-
-
-
 import Allroutes from "./allRoutes/Allroutes";
-import Login from "./pages/Auth/Login/Login";
-import Otp from "./pages/Auth/OtpVerification/Otp";
-import Signup from "./pages/Auth/Signup/Signup";
 
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Navbar/Sidebar";
 
 function App() {
-  return <div >
-    {/* Home */}
-    {/* <Allroutes /> */}
-    {/* <Signup />
-    <Otp />
-    <Login /> */}
-  </div>;
+  return (
+    <div>
+      {/* Home */}
+      <Navbar />
+      <Sidebar />
+      <Allroutes />
+    </div>
+  );
 
 }
 

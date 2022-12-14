@@ -20,7 +20,7 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import logo from "../Assets/logo.jpeg";
+import logo from "../../Assets/logo.jpeg";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";

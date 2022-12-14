@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../Assets/logo.jpeg";
+import logo from "../../Assets/logo.jpeg";
 
 const Navbar = () => {
   const [arrow, setArrow] = useState(false);
