@@ -1,6 +1,8 @@
 import {
+  AspectRatio,
   Box,
   Button,
+  Center,
   Flex,
   Grid,
   GridItem,
@@ -56,17 +58,19 @@ const Blog = () => {
         >
           Cronometer Blog
         </Text>
-        <Text
+        <Center
           textAlign={"center"}
           as="b"
           fontSize={["s", "m", "xl"]}
           color="white"
         >
           App Updates, Nutrition Tips & Inspiration
-        </Text>
+        </Center>
+        <br />
         <Box
-          w={"75%"}
-          display={["block,block,flex"]}
+          w={["95%", "85%", "75%"]}
+          display="flex"
+          flexDirection={["column", "column", "row"]}
           boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
           m={"auto"}
           p={"3%"}
@@ -74,7 +78,7 @@ const Blog = () => {
           borderRadius={"10px"}
           gap={"10%"}
         >
-          <VStack w={"45%"}>
+          <VStack w={["90%", "85%%", "45%"]}>
             <Heading>Eat Smater.</Heading>
             <Heading>Live Better.</Heading>
             <Text>
@@ -84,14 +88,21 @@ const Blog = () => {
             </Text>
             <Button colorScheme="green">GET STARTED</Button>
           </VStack>
-          <Box w={"60%"}>
-            <video
-              style={{ borderRadius: "10px" }}
-              src={"https://youtu.be/R49fLnhMhIE"}
-              width="100%"
-              height="1000"
-              controls
-            ></video>
+          <Box
+            w={["95%", "95%", "60%"]}
+            m="auto"
+            marginTop={["20px", "20px", "0px"]}
+          >
+            <AspectRatio ratio={5 / 3}>
+              <iframe
+                style={{ borderRadius: "10px" }}
+                src="https://www.youtube.com/embed/R49fLnhMhIE"
+                title="Cronometer | Eat Smarter. Live Better."
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </AspectRatio>
           </Box>
         </Box>
 
@@ -114,7 +125,7 @@ const Blog = () => {
               borderRadius={"10px"}
               src="https://cronometer.com/blog/wp-content/uploads/2022/11/Blog-Img-DB.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               Mastering Diabetes with Cronometer
             </Text>
             <Text>December 1, 2022</Text>
@@ -153,37 +164,47 @@ const Blog = () => {
               borderRadius={"10px"}
               src="https://cronometer.com/blog/wp-content/uploads/2022/10/Blog-Img-Gummy-Bears.png"
             />
-            <Text fontSize={"2xl"} fontWeight={"extrabold"}>
+            <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               A Look Into Sugar-Free Sensitivities
             </Text>
             <Text>October 27, 2022</Text>
           </GridItem>
         </Grid>
+        <br />
         <Box w="75%" m="auto">
           <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
         </Box>
+        <br />
+        <br />
       </Box>
 
       <Box bg={"#f0f2fa"} m={"auto"} padding={"40px 0px"}>
         <Heading textAlign={"center"}>Blog Archives</Heading>
         <br />
-        <HStack w={"60%"} m={"auto"} justifyContent={"space-between"}>
-          <Text as={"b"} fontSize={"xl"}>
+        <Box
+          display={"flex"}
+          flexDirection={["column", "column", "row"]}
+          w={"60%"}
+          m={"auto"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Text as={"b"} fontSize={["m", "l", "xl"]}>
             NUTRITION
           </Text>
-          <Text as={"b"} fontSize={"xl"}>
+          <Text as={"b"} fontSize={["m", "l", "xl"]}>
             FITNESS
           </Text>
-          <Text as={"b"} fontSize={"xl"}>
+          <Text as={"b"} fontSize={["m", "l", "xl"]}>
             FEATURES
           </Text>
-          <Text as={"b"} fontSize={"xl"}>
+          <Text as={"b"} fontSize={["m", "l", "xl"]}>
             RECIPES
           </Text>
-          <Text as={"b"} fontSize={"xl"}>
+          <Text as={"b"} fontSize={["m", "l", "xl"]}>
             APP UPDATES
           </Text>
-        </HStack>
+        </Box>
         <br />
         <InputGroup w={"75%"} m={"auto"}>
           <Input bg={"white"} type="text" placeholder="Search Blog posts..." />
@@ -197,40 +218,51 @@ const Blog = () => {
       </Box>
 
       <Box padding={"100px 0px"}>
-        <Flex w={"70%"} m={"auto"} gap={"20%"}>
-          <Box W={"35%"}>
+        <Flex w={["95%", "85%", "70%"]} m={"auto"} gap={"20%"}>
+          <Box W={["55%", "55%", "35%"]}>
             <Text>CRONO HACKS</Text>
-            <Heading>Cronometer Tips & Tricks</Heading>
-            <Text>
+            <Text fontSize={["xl", "2xl", "4xl"]} fontWeight={"bold"}>
+              Cronometer Tips & Tricks
+            </Text>
+            <Text fontSize={["s", "m", "l"]}>
               Whether you’re a new or longtime user, here are some helpful tips
               to make the most of your nutrition tracking.
             </Text>
-            <Button bg={"#ff6733"}>GRT THIS TIPS</Button>
+            <br />
+            <Button bg={"#ff6733"} color="white">
+              GET THIS TIPS
+            </Button>
           </Box>
-          <Box w={"45%"}>
+          <Box w={["45%", "45%", "45%"]}>
             <Image
-              w="90%"
+              w="100%"
               textAlign={"center"}
               src="https://cronometer.com/blog/wp-content/uploads/2022/11/tips-and-tricks-icon-2.png"
             />
           </Box>
         </Flex>
-        <Flex w={"70%"} m={"auto"} gap={"20%"}>
-          <Box w={"45%"}>
+        <br />
+        <Flex w={["95%", "85%", "70%"]} m={"auto"} gap={"20%"}>
+          <Box w={["65%", "55%", "45%"]}>
             <Image
-              w="90%"
+              w="100%"
               textAlign={"center"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/11/tips-and-tricks-icon-2.png"
+              src="	https://cronometer.com/blog/wp-content/uploads/2022/11/app-updates-icon-3-1536x1536.png"
             />
           </Box>
-          <Box W={"35%"}>
+          <Box W={["35%", "45%", "35%"]}>
             <Text>APP UPDATES</Text>
-            <Heading>New & Improved: The Latest Updates</Heading>
-            <Text>
+            <Text fontSize={["xl", "2xl", "4xl"]} fontWeight={"bold"}>
+              New & Improved: The Latest Updates
+            </Text>
+            <Text fontSize={["s", "m", "l"]}>
               Get up to date on all of the latest Cronometer updates, including
               cool new features like our Recipe Importer or Target Scheduler!
             </Text>
-            <Button bg={"#ff6733"}>SEE WHAT'S NEW</Button>
+            <br />
+            <Button bg={"#ff6733"} color="white">
+              SEE WHAT'S NEW
+            </Button>
           </Box>
         </Flex>
       </Box>
