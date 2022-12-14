@@ -1,0 +1,68 @@
+#signup {
+    background-color: #FFFCF6;
+    background-image: url('https://cdn1.cronometer.com/brand2/assets/DotPatternSmall.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-size: 550px;
+}
+
+#topSec {
+    background-color: #262a3b;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#topSec>img {
+    height: 50px;
+    padding-left: 3vw;
+}
+
+#name {
+    padding-left: 2vw;
+}
+
+#parent {
+    width: 46%;
+    margin: auto;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.userCreds {
+    background-color: white;
+    padding: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.userCreds>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+    text-align: justify;
+}
+
+.userCreds>div>input {
+    width: 70%;
+}
+
+.lastText {
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+@media only screen and (max-width: 800px) {
+    #parent{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #parent{
+        width: 90%;
+    }
+}
