@@ -218,8 +218,13 @@ const Blog = () => {
       </Box>
 
       <Box padding={"100px 0px"}>
-        <Flex w={["95%", "85%", "70%"]} m={"auto"} gap={"20%"}>
-          <Box W={["55%", "55%", "35%"]}>
+        <Flex
+          w={["95%", "85%", "70%"]}
+          flexDirection={["column", "row", "row"]}
+          m={"auto"}
+          gap={"20%"}
+        >
+          <Box W={["95%", "55%", "35%"]}>
             <Text>CRONO HACKS</Text>
             <Text fontSize={["xl", "2xl", "4xl"]} fontWeight={"bold"}>
               Cronometer Tips & Tricks
@@ -233,24 +238,22 @@ const Blog = () => {
               GET THIS TIPS
             </Button>
           </Box>
-          <Box w={["45%", "45%", "45%"]}>
+          <Box w={["95%", "45%", "45%"]} margin={"auto"}>
             <Image
-              w="100%"
+              w={["70%", "100%", "100%"]}
               textAlign={"center"}
               src="https://cronometer.com/blog/wp-content/uploads/2022/11/tips-and-tricks-icon-2.png"
             />
           </Box>
         </Flex>
         <br />
-        <Flex w={["95%", "85%", "70%"]} m={"auto"} gap={"20%"}>
-          <Box w={["65%", "55%", "45%"]}>
-            <Image
-              w="100%"
-              textAlign={"center"}
-              src="	https://cronometer.com/blog/wp-content/uploads/2022/11/app-updates-icon-3-1536x1536.png"
-            />
-          </Box>
-          <Box W={["35%", "45%", "35%"]}>
+        <Flex
+          w={["95%", "85%", "70%"]}
+          flexDirection={["column", "row", "row"]}
+          m={"auto"}
+          gap={"20%"}
+        >
+          <Box W={["95%", "55%", "35%"]}>
             <Text>APP UPDATES</Text>
             <Text fontSize={["xl", "2xl", "4xl"]} fontWeight={"bold"}>
               New & Improved: The Latest Updates
@@ -264,6 +267,13 @@ const Blog = () => {
               SEE WHAT'S NEW
             </Button>
           </Box>
+          <Box W={["95%", "55%", "35%"]} margin="auto">
+            <Image
+              w={["70%", "100%", "100%"]}
+              textAlign={"center"}
+              src="	https://cronometer.com/blog/wp-content/uploads/2022/11/app-updates-icon-3-1536x1536.png"
+            />
+          </Box>
         </Flex>
       </Box>
 
@@ -273,7 +283,7 @@ const Blog = () => {
           m="auto"
           justifyContent={"space-between"}
         >
-          <Box w={["70%", "60%", "40%"]}>
+          <Box w={["60%", "60%", "40%"]}>
             <Text
               fontSize={["xl", "3xl", "5xl"]}
               color="white"
@@ -286,10 +296,11 @@ const Blog = () => {
               app.
             </Text>
           </Box>
-          <Box m="auto" w={["90%", "85%", "75%"]}>
+          <Box m="auto" w={["35%", "85%", "75%"]}>
             <Button
               fontSize={["m", "l", "xl"]}
               bg={"#44d07b"}
+              color={"white"}
               p={["5px 10px", "10px 20px", "15px 35px"]}
             >
               Sign Up - It's Free
@@ -489,7 +500,12 @@ const Blog = () => {
 
       <Box>
         <br />
-        <Flex w="75%" m="auto" gap="8%" justifyContent={"space-between"}>
+        <Flex
+          w={["90%", "85%", "75%"]}
+          m="auto"
+          gap="8%"
+          justifyContent={"space-between"}
+        >
           <Flex w="46%" flexDirection={"column"} justifyContent="center">
             <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold">
               Track your food, exercise and health metrics with the Cronometer
@@ -497,7 +513,7 @@ const Blog = () => {
             </Text>
             <br />
             <Button
-              w={["30%", "50%", "30%"]}
+              w={["60%", "50%", "30%"]}
               fontSize={["m", "l", "xl"]}
               color="white"
               bg="#ff6733"
