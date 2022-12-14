@@ -171,7 +171,7 @@ const Blog = () => {
           </GridItem>
         </Grid>
         <br />
-        <Box w="75%" m="auto">
+        <Box w={["90%", "85%", "75%"]} m="auto">
           <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
         </Box>
         <br />
@@ -484,21 +484,28 @@ const Blog = () => {
             VIEW MORE
           </Button>
         </Box>
+        <br />
       </Box>
 
       <Box>
+        <br />
         <Flex w="75%" m="auto" gap="8%" justifyContent={"space-between"}>
           <Flex w="46%" flexDirection={"column"} justifyContent="center">
-            <Heading>
+            <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold">
               Track your food, exercise and health metrics with the Cronometer
               app.
-            </Heading>
+            </Text>
             <br />
-            <Button w="30%" fontSize={"xl"} color="white" bg="#ff6733">
+            <Button
+              w={["30%", "50%", "30%"]}
+              fontSize={["m", "l", "xl"]}
+              color="white"
+              bg="#ff6733"
+            >
               SIGN UP
             </Button>
           </Flex>
-          <Box w="46%">
+          <Box w={["50%", "50%", "46%"]}>
             <Image
               w="70%"
               src="https://cronometer.com/blog/wp-content/uploads/2022/11/crono-app.png"
