@@ -394,7 +394,7 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/11/Blog-Img-DB.png"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Suunto.png"
             />
             <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               Mastering Diabetes with Cronometer
@@ -407,7 +407,7 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/09/cronometer-new-logo@2x.png"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Heart-rate-symbol.png"
             />
             <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               Our New Look: The Details Behind Cronometer’s Makeover
@@ -420,7 +420,7 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/06/Blog-Img-New-Improved.png"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/05/Apple-watch-app-low-res.jpeg"
             />
             <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               New & Improved: The Latest Cronometer Updates
@@ -433,7 +433,7 @@ const Blog = () => {
               h={"150px"}
               w={"100%"}
               borderRadius={"10px"}
-              src="https://cronometer.com/blog/wp-content/uploads/2022/10/Blog-Img-Gummy-Bears.png"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/04/pexels-kampus-production-5920765-scaled.jpg"
             />
             <Text fontSize={["m", "xl", "2xl"]} fontWeight={"extrabold"}>
               A Look Into Sugar-Free Sensitivities
@@ -478,7 +478,7 @@ const Blog = () => {
               height={["200px", "250px", "300px"]}
               borderRadius={"10px"}
               w="100%"
-              src="https://cronometer.com/blog/wp-content/uploads/2022/04/Untitled-design-6.png"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/03/20211010_122543-Copy-scaled-e1648237252449.jpeg"
             />
             <Text fontSize={["l", "xl", "xl"]} fontWeight={"extrabold"}>
               Dietitians Discuss Diet And Eczema
@@ -496,7 +496,7 @@ const Blog = () => {
               height={["200px", "250px", "300px"]}
               borderRadius={"10px"}
               w="100%"
-              src="https://cronometer.com/blog/wp-content/uploads/2022/04/IMG_7610-scaled.jpg"
+              src="https://cronometer.com/blog/wp-content/uploads/2022/01/Shirondale.jpg"
             />
             <Text fontSize={["l", "xl", "xl"]} fontWeight={"extrabold"}>
               How Can Diet & Nutrition Affect Acne
