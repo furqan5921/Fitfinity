@@ -1,61 +1,15 @@
-import React from 'react';
-import {
-  Box,
-  useColorModeValue,
-  Drawer,
-  DrawerContent,
-  useDisclosure,
-  Text,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  MenuButton,
-  HStack,
-  Avatar,
-  VStack,
-  Menu,
-  Flex,
-  IconButton
-} from '@chakra-ui/react';
-import { SidebarContent } from './SidebarContent';
-import { FiBell, FiChevronDown, FiMenu } from 'react-icons/fi';
-import {AiTwotoneSound} from 'react-icons/ai';
+import { Avatar } from "@chakra-ui/avatar";
+import { IconButton } from "@chakra-ui/button";
+import { useColorModeValue } from "@chakra-ui/color-mode";
+import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/layout";
+import { Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/menu";
+import { AiTwotoneSound } from "react-icons/ai";
+import { FiChevronDown, FiMenu } from "react-icons/fi";
 
-
-
-export default function Sidebar({children}) {
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    return (
-      <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
-        <SidebarContent
-          onClose={() => onClose}
-          display={{ base: 'none', md: 'block' }}
-        />
-        <Drawer
-          autoFocus={false}
-          isOpen={isOpen}
-          placement="left"
-          onClose={onClose}
-          returnFocusOnClose={false}
-          onOverlayClick={onClose}
-          size="full">
-          <DrawerContent>
-            <SidebarContent onClose={onClose} />
-          </DrawerContent>
-        </Drawer>
-        {/* mobilenav */}
-        <MobileNav onOpen={onOpen} />
-        <Box ml={{ base: 0, md: 60 }} p="4">
-          {children}
-        </Box>
-      </Box>
-    );
-  }
-
-  const MobileNav = ({ onOpen, ...rest }) => {
+export const MobileNav = ({ onOpen, ...rest }) => {
     return (
       <Flex
-        ml={{ base: 0, md: 60 }}
+        ml={{ base: 0, md: 50 }}
         px={{ base: 4, md: 4 }}
         height="20"
         alignItems="center"
@@ -80,7 +34,7 @@ export default function Sidebar({children}) {
           FitFinity
         </Text>
   
-        <HStack spacing={{ base: '0', md: '6' }}>
+        <HStack spacing={{ base: '0', md: '&' }}>
           <IconButton
             size="lg"
             colorScheme='orange'
