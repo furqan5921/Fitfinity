@@ -22,7 +22,7 @@ const Otp = () => {
     const [otp, setOtp] = useState('')
     const [email, setEmail] = useState('')
     const dispatch = useDispatch()
-    const { otpVerified, wrongOtp, successOtp, invalidEmail } = useSelector(s => s.auth)
+    const { wrongOtp, successOtp, invalidEmail } = useSelector(s => s.auth)
 
     const handleClick = () => {
         dispatch(verifyOtp({ otp, email }))
@@ -84,7 +84,7 @@ const Otp = () => {
                     <Stack spacing={6}>
 
                         {
-                            !otpVerified ? <Button
+                            !successOtp ? <Button
                                 onClick={handleClick}
                                 bg={'blue.400'}
                                 color={'white'}

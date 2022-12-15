@@ -7,7 +7,7 @@ import { fillSignupa, signup } from '../../../redux/authReducer/actions';
 import FillDetails from '../../../components/FillDetails';
 import UserExists from '../../../components/UserExists';
 import SignupSuccess from '../../../components/SignupSuccess';
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Signup = () => {
 
@@ -40,7 +40,7 @@ const Signup = () => {
                 if (details.password === details.cPassword) {
                     dispatch(fillSignupa(false))
                     dispatch(signup(details))
-
+                    alert('Please wait request is being processed')
                 }
                 else
                     dispatch(fillSignupa(true))
