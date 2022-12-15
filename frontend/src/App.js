@@ -1,11 +1,9 @@
-import Blog from "./pages/Blog/Blog";
-import Faltu from "./pages/Blog/faltu";
+import Plans from "./pages/Plans/Plans";
 
 function App() {
   return (
     <div>
-      <Blog />
-      {/* <Faltu /> */}
+      <Plans />
     </div>
   );
 }
