@@ -34,9 +34,14 @@ const Enterprise = () => {
         justifyContent={["center", "center", "space-between"]}
       >
         <Box>
-          <Image src="https://cdn1.cronometer.com/brand/logos/enterprise-logo.svg" />
+          <Image
+            w={["70%", "55%", "100%"]}
+            src="https://cdn1.cronometer.com/brand/logos/enterprise-logo.svg"
+          />
           <br />
-          <Text>For hospitals, universities and research teams</Text>
+          <Text fontSize={["13px", "15px", "20px"]}>
+            For hospitals, universities and research teams
+          </Text>
           <br />
           <UnorderedList>
             <ListItem>All Cronometer Pro features</ListItem>

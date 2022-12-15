@@ -98,27 +98,34 @@ const ProfPlan = () => {
       </Flex>
       {open ? (
         <TableContainer>
-          <Table variant="striped" colorScheme="#fafbff">
+          <Table>
             <Thead>
               <Tr>
                 <Th w="70%">
-                  <Text>Gold Features</Text>
+                  <Text fontSize={["10px", "15px", "25px"]} fontWeight={"bold"}>
+                    Gold Features
+                  </Text>
+                  <br />
                   <Text>USD per Year - billed annually</Text>
                 </Th>
                 <Th w="15%">
                   <Image src="https://cdn1.cronometer.com/plans/basic-logo.svg" />
-                  <Text>$0.00</Text>
+                  <Text fontSize={["10px", "13px", "17px"]} fontWeight={"bold"}>
+                    $0.00
+                  </Text>
                 </Th>
                 <Th w="15%">
                   <Image src="https://cdn1.cronometer.com/plans/gold-logo.svg" />
-                  <Text>$49.99</Text>
+                  <Text fontSize={["10px", "13px", "17px"]} fontWeight={"bold"}>
+                    $49.99
+                  </Text>
                 </Th>
               </Tr>
             </Thead>
             <Tbody>
               {data.priceData.map((el) => {
                 return (
-                  <Tr>
+                  <Tr fontSize={["10px", "13px", "17px"]}>
                     <Td w="70%">
                       <Text>{el.title}</Text>
                       <Text>{el.details}</Text>
