@@ -34,8 +34,11 @@ const Plans = () => {
   console.log(data.priceData[0].title);
 
   return (
-    <Box w="80%" border={"1px"} float={"right"} bg="rgb(250, 241, 222)">
-      <Text>Plans for Individuals</Text>
+    <Box w="80%" float={"right"} bg="rgb(250, 241, 222)">
+      <Text fontSize={["l", "xl", "2xl"]} fontWeight="bold" w="95%" m="auto">
+        Plans for Individuals
+      </Text>
+      <br />
       <Box className={styles.bgImage}>
         <Flex
           flexDirection={["column,column,row"]}
@@ -44,7 +47,9 @@ const Plans = () => {
           <Box>
             {/* <Text>Cronometer Gold</Text> */}
             <Image src="https://cdn1.cronometer.com/plans/gold-no-icon-logo.svg" />
+            <br />
             <Text>Reach your goals faster with Gold</Text>
+            <br />
             <UnorderedList>
               <ListItem>No ads!</ListItem>
               <ListItem>Import recipes via URL</ListItem>
