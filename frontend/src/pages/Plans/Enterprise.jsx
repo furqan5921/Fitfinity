@@ -5,18 +5,7 @@ import {
   Flex,
   Image,
   ListItem,
-  Radio,
-  RadioGroup,
-  Stack,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
   Text,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
   UnorderedList,
 } from "@chakra-ui/react";
 import { useState } from "react";
