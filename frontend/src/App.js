@@ -6,13 +6,11 @@ import Sidebar from "./components/Navbar/Sidebar";
 function App() {
   return (
     <div>
-      {/* Home */}
       <Navbar />
       <Sidebar />
       <Allroutes />
     </div>
   );
-
 }
 
 export default App;
