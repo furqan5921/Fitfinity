@@ -1,13 +1,13 @@
 import Allroutes from "./allRoutes/Allroutes";
 
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Navbar/Sidebar";
 
 function App() {
   return (
     <div>
       {/* Home */}
-      <Navbar />
+      {/* <Navbar /> */}
       <Sidebar />
       <Allroutes />
     </div>
