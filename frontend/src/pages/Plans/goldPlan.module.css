@@ -1,0 +1,10 @@
+.bgImage {
+  width: 95%;
+  background: white;
+  border: "1px" solid black;
+  margin: auto;
+  background-image: url("https://cdn1.cronometer.com/plans/gold-panel-dots.svg")
+    bottom right;
+  background-size: 300px;
+  background-repeat: no-repeat;
+}
