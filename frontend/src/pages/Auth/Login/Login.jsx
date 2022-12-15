@@ -14,7 +14,7 @@ export default function Login() {
   })
   const dispatch = useDispatch()
   const { isAuth } = useSelector(s=>s.auth)
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDetails({ ...details, [name]: value })
