@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
+import Dashboard from "../pages/Dashboard/Dashboard";
+import Home from "../pages/Home/Home";
 
 const Allroutes = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/dashbaord" element={<Dashboard />} />
+    </Routes>
+  );
+};
 
-export default Allroutes
+export default Allroutes;

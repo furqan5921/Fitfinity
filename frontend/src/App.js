@@ -1,11 +1,12 @@
-import Plans from "./pages/Plans/Plans";
 
+import Plans from "./pages/Plans/Plans";
 function App() {
   return (
     <div>
-      <Plans />
+<Plans/>
     </div>
   );
+
 }
 
 export default App;
