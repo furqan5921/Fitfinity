@@ -6,7 +6,7 @@ const GiftSubscription = () => {
   return (
     <Box className={styles.bgImage}>
       <Flex
-        flexDirection={["column,column,row"]}
+        flexDirection={["column", "column", "row"]}
         justifyContent={["center", "center", "space-between"]}
       >
         <Box>

@@ -25,17 +25,20 @@ import data from "./priceData.json";
 
 const GoldPlan = () => {
   const [changePrice, setChangePrice] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleChangePrice = (state) => {
     setChangePrice(state);
   };
-  const handleOpen = () => {};
-  console.log(data.priceData[0].title);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
 
   return (
     <Box className={styles.bgImage}>
       <Flex
-        flexDirection={["column,column,row"]}
+        flexDirection={["column", "column", "row"]}
         justifyContent={["center", "center", "space-between"]}
       >
         <Box>
@@ -54,7 +57,7 @@ const GoldPlan = () => {
           </UnorderedList>
           <Button onClick={() => handleOpen()}>VIEW ALL FEATURES</Button>
         </Box>
-        <Box>
+        <Box mt={["20px", "20px", "0px"]}>
           {changePrice ? (
             <>
               <Text>$8.99</Text> <Text>USD per month-billed monthly</Text>
@@ -89,38 +92,44 @@ const GoldPlan = () => {
           </Button>
         </Box>
       </Flex>
-      <TableContainer>
-        <Table variant="striped" colorScheme="#fafbff">
-          <Thead>
-            <Tr>
-              <Th w="70%">
-                <Text>Gold Features</Text>
-                <Text>USD per Year - billed annually</Text>
-              </Th>
-              <Th w="15%">
-                <Image src="https://cdn1.cronometer.com/plans/basic-logo.svg" />
-                <Text>$0.00</Text>
-              </Th>
-              <Th w="15%">
-                <Image src="https://cdn1.cronometer.com/plans/gold-logo.svg" />
-                <Text>$49.99</Text>
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {data.priceData.map((el) => {
+      {open ? (
+        <TableContainer>
+          <Table variant="striped" colorScheme="#fafbff">
+            <Thead>
               <Tr>
-                <Td w="70%">
-                  <Text>{el.title}</Text>
-                  <Text>{el.details}</Text>
-                </Td>
-                <Td w="15%">{el.basic ? "Okay" : "Not Okay"}</Td>
-                <Td w="15%">{el.gold ? "Okay" : "Not Okay"}</Td>
-              </Tr>;
-            })}
-          </Tbody>
-        </Table>
-      </TableContainer>
+                <Th w="70%">
+                  <Text>Gold Features</Text>
+                  <Text>USD per Year - billed annually</Text>
+                </Th>
+                <Th w="15%">
+                  <Image src="https://cdn1.cronometer.com/plans/basic-logo.svg" />
+                  <Text>$0.00</Text>
+                </Th>
+                <Th w="15%">
+                  <Image src="https://cdn1.cronometer.com/plans/gold-logo.svg" />
+                  <Text>$49.99</Text>
+                </Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {data.priceData.map((el) => {
+                return (
+                  <Tr>
+                    <Td w="70%">
+                      <Text>{el.title}</Text>
+                      <Text>{el.details}</Text>
+                    </Td>
+                    <Td w="15%">{el.basic ? "Okay" : "Not Okay"}</Td>
+                    <Td w="15%">{el.gold ? "Okay" : "Not Okay"}</Td>
+                  </Tr>
+                );
+              })}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      ) : (
+        <Box></Box>
+      )}
     </Box>
   );
 };
