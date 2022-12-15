@@ -8,7 +8,7 @@ import FAQ from "./FAQ";
 
 const Plans = () => {
   return (
-    <Box w="80%" float={"right"} bg="rgb(250, 241, 222)">
+    <Box w={["100%", "100%", "80%"]} float={"right"} bg="rgb(250, 241, 222)">
       <Text fontSize={["l", "xl", "2xl"]} fontWeight="bold" w="95%" m="auto">
         Plans for Individuals
       </Text>

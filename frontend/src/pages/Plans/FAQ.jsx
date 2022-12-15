@@ -17,7 +17,9 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 const FAQ = () => {
   return (
     <Box w="95%" m="auto" bg="white" borderRadius={"10px"} p="10px">
-      <Text>Frequently Asked Questions</Text>
+      <Text fontSize={["l", "xl", "2xl"]} fontWeight={"bold"}>
+        Frequently Asked Questions
+      </Text>
       <Accordion defaultIndex={[0]} allowMultiple>
         <AccordionItem>
           <AccordionButton>

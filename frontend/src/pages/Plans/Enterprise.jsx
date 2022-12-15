@@ -48,7 +48,14 @@ const Enterprise = () => {
           </UnorderedList>
         </Box>
         <Box>
-          <Text>Custom</Text>
+          <Text
+            fontSize={["l", "xl", "2xl"]}
+            fontWeight={"bold"}
+            textAlign={["left", "left", "right"]}
+          >
+            Custom
+          </Text>
+          <br />
           <Button _hover={"none"} bg="#44d07b" color={"white"}>
             CONTACT US
           </Button>

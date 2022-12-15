@@ -43,11 +43,16 @@ const GoldPlan = () => {
         justifyContent={["center", "center", "space-between"]}
       >
         <Box>
-          <Image src="https://cdn1.cronometer.com/plans/gold-no-icon-logo.svg" />
+          <Image
+            w={["50%", "40%", "100%"]}
+            src="https://cdn1.cronometer.com/plans/gold-no-icon-logo.svg"
+          />
           <br />
-          <Text>Reach your goals faster with Gold</Text>
+          <Text fontWeight={"bold"} fontSize={["13px", "15px", "20px"]}>
+            Reach your goals faster with Gold
+          </Text>
           <br />
-          <UnorderedList>
+          <UnorderedList fontSize={["10px", "13px", "17px"]}>
             <ListItem>No ads!</ListItem>
             <ListItem>Import recipes via URL</ListItem>
             <ListItem>Dairy groups and timestamps</ListItem>
@@ -60,6 +65,7 @@ const GoldPlan = () => {
           <Button
             variant={"outline"}
             colorScheme="orange"
+            fontSize={["10px", "13px", "15px"]}
             onClick={() => handleOpen()}
           >
             VIEW ALL FEATURES
@@ -68,11 +74,35 @@ const GoldPlan = () => {
         <Box mt={["20px", "20px", "0px"]}>
           {changePrice ? (
             <>
-              <Text>$8.99</Text> <Text>USD per month-billed monthly</Text>
+              <Text
+                fontSize={["l", "xl", "3xl"]}
+                fontWeight={"bold"}
+                textAlign={["left", "left", "right"]}
+              >
+                $8.99
+              </Text>
+              <Text
+                textAlign={["left", "left", "right"]}
+                fontSize={["10px", "13px", "17px"]}
+              >
+                USD per month-billed monthly
+              </Text>
             </>
           ) : (
             <>
-              <Text>$4.99</Text> <Text>USD per year-billed yearly</Text>
+              <Text
+                fontSize={["l", "xl", "3xl"]}
+                fontWeight={"bold"}
+                textAlign={["left", "left", "right"]}
+              >
+                $4.99
+              </Text>
+              <Text
+                textAlign={["left", "left", "right"]}
+                fontSize={["10px", "13px", "17px"]}
+              >
+                USD per year-billed yearly
+              </Text>
             </>
           )}
           <RadioGroup defaultValue="1">
@@ -81,7 +111,7 @@ const GoldPlan = () => {
                 onClick={() => handleChangePrice(false)}
                 colorScheme="orange"
                 value="1"
-                size="lg"
+                size={["sm", "md", "lg"]}
               >
                 Yearly
               </Radio>
@@ -89,40 +119,53 @@ const GoldPlan = () => {
                 onClick={() => handleChangePrice(true)}
                 colorScheme="orange"
                 value="2"
-                size="lg"
+                size={["sm", "md", "lg"]}
               >
                 Monthly
               </Radio>
             </Stack>
           </RadioGroup>
-          <Button _hover={"none"} bg="#ff6733" color={"white"}>
+          <br />
+          <Button
+            _hover={"none"}
+            bg="#ff6733"
+            color={"white"}
+            fontSize={["10px", "13px", "17px"]}
+          >
             SUBSCRIBE NOW
           </Button>
         </Box>
       </Flex>
       {open ? (
         <TableContainer>
-          <Table variant="striped" colorScheme="#fafbff">
+          <Table>
             <Thead>
               <Tr>
                 <Th w="70%">
-                  <Text>Gold Features</Text>
+                  <Text fontSize={["10px", "15px", "25px"]} fontWeight={"bold"}>
+                    Gold Features
+                  </Text>
+                  <br />
                   <Text>USD per Year - billed annually</Text>
                 </Th>
                 <Th w="15%">
                   <Image src="https://cdn1.cronometer.com/plans/basic-logo.svg" />
-                  <Text>$0.00</Text>
+                  <Text fontSize={["10px", "13px", "17px"]} fontWeight={"bold"}>
+                    $0.00
+                  </Text>
                 </Th>
                 <Th w="15%">
                   <Image src="https://cdn1.cronometer.com/plans/gold-logo.svg" />
-                  <Text>$49.99</Text>
+                  <Text fontSize={["10px", "13px", "17px"]} fontWeight={"bold"}>
+                    $49.99
+                  </Text>
                 </Th>
               </Tr>
             </Thead>
             <Tbody>
               {data.priceData.map((el) => {
                 return (
-                  <Tr>
+                  <Tr fontSize={["10px", "13px", "17px"]}>
                     <Td w="70%">
                       <Text>{el.title}</Text>
                       <Text>{el.details}</Text>

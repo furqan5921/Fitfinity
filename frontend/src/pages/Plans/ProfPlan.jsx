@@ -38,14 +38,17 @@ const ProfPlan = () => {
         justifyContent={["center", "center", "space-between"]}
       >
         <Box>
-          <Image src="https://cdn1.cronometer.com/plans/pro-no-icon-logo.svg" />
+          <Image
+            w={["50%", "40%", "100%"]}
+            src="https://cdn1.cronometer.com/plans/pro-no-icon-logo.svg"
+          />
           <br />
-          <Text>
+          <Text fontWeight={"bold"} fontSize={["13px", "15px", "20px"]}>
             Our professional version for health coaches and trainers. Monitor
             your clients Cronometer accounts.
           </Text>
           <br />
-          <UnorderedList>
+          <UnorderedList fontSize={["10px", "13px", "17px"]}>
             <ListItem>
               Includes 10 client seats -- add more for $2.25 per month
             </ListItem>
@@ -67,15 +70,28 @@ const ProfPlan = () => {
           <Button
             variant={"outline"}
             colorScheme="orange"
+            fontSize={["10px", "13px", "15px"]}
             onClick={() => handleOpen()}
           >
             VIEW ALL FEATURES
           </Button>
         </Box>
         <Box>
-          <Text>$29.95</Text>
-          <Text>USD per month</Text>
-          <Button _hover={"none"} bg="#44d07b" color={"white"}>
+          <Text
+            fontSize={["l", "xl", "3xl"]}
+            fontWeight={"bold"}
+            textAlign={["left", "left", "right"]}
+          >
+            $29.95
+          </Text>
+          <Text fontSize={["10px", "13px", "17px"]}>USD per month</Text>
+          <br />
+          <Button
+            _hover={"none"}
+            bg="#44d07b"
+            color={"white"}
+            fontSize={["10px", "13px", "17px"]}
+          >
             SUBSCRIBE NOW
           </Button>
         </Box>
