@@ -22,6 +22,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import styles from "./goldPlan.module.css";
+import data from "./priceData.json";
 
 const Plans = () => {
   const [changePrice, setChangePrice] = useState(false);
@@ -30,6 +31,7 @@ const Plans = () => {
     setChangePrice(state);
   };
   const handleOpen = () => {};
+  console.log(data.priceData[0].title);
 
   return (
     <Box w="80%" border={"1px"} float={"right"} bg="rgb(250, 241, 222)">
@@ -93,26 +95,31 @@ const Plans = () => {
           <Table variant="striped" colorScheme="#fafbff">
             <Thead>
               <Tr>
-                <Th>
+                <Th w="70%">
                   <Text>Gold Features</Text>
                   <Text>USD per Year - billed annually</Text>
                 </Th>
-                <Th>
+                <Th w="15%">
                   <Image src="https://cdn1.cronometer.com/plans/basic-logo.svg" />
                   <Text>$0.00</Text>
                 </Th>
-                <Th>
+                <Th w="15%">
                   <Image src="https://cdn1.cronometer.com/plans/gold-logo.svg" />
                   <Text>$49.99</Text>
                 </Th>
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-              </Tr>
+              {data.priceData.map((el) => {
+                <Tr>
+                  <Td w="70%">
+                    <Text>{el.title}</Text>
+                    <Text>{el.details}</Text>
+                  </Td>
+                  <Td w="15%">{el.basic ? "Okay" : "Not Okay"}</Td>
+                  <Td w="15%">{el.gold ? "Okay" : "Not Okay"}</Td>
+                </Tr>;
+              })}
             </Tbody>
           </Table>
         </TableContainer>
