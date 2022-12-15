@@ -171,7 +171,7 @@ const Blog = () => {
           </GridItem>
         </Grid>
         <br />
-        <Box w={["90%", "85%", "75%"]} m="auto">
+        <Box w={["90%", "85%", "75%"]} m="auto" textAlign={"right"}>
           <Button rightIcon={<ArrowForwardIcon />}>VIEW MORE</Button>
         </Box>
         <br />
@@ -311,6 +311,7 @@ const Blog = () => {
       </Box>
 
       <Box bg={"#f0f2fa"}>
+        <br />
         <Text w={["90%", "85%", "75%"]} m="auto">
           ON TREND
         </Text>
@@ -366,7 +367,7 @@ const Blog = () => {
           </Box>
         </Flex>
         <br />
-        <Box w={["90%", "85%", "75%"]} m="auto">
+        <Box w={["90%", "85%", "75%"]} m="auto" textAlign={"right"}>
           <Button bg={"white"} rightIcon={<ArrowForwardIcon />}>
             VIEW MORE
           </Button>
@@ -442,7 +443,7 @@ const Blog = () => {
           </GridItem>
         </Grid>
         <br />
-        <Box w={["90%", "85%", "75%"]} m="auto">
+        <Box w={["90%", "85%", "75%"]} m="auto" textAlign={"right"}>
           <Button bg="white" rightIcon={<ArrowForwardIcon />}>
             VIEW MORE
           </Button>
@@ -505,7 +506,7 @@ const Blog = () => {
           </Box>
         </Flex>
         <br />
-        <Box w={["90%", "85%", "75%"]} m="auto">
+        <Box w={["90%", "85%", "75%"]} m="auto" textAlign={"right"}>
           <Button bg={"white"} rightIcon={<ArrowForwardIcon />}>
             VIEW MORE
           </Button>
