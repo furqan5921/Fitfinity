@@ -118,7 +118,7 @@ app.post('/login', async (req, res) => {
     try {
         let existingUser = await userModel.findOne({ email, password });
 
-        if (!existingUser) return res.status(401).send({ message: 'wrong credentials' })
+        if (!existingUser) return res.send({ message: 'wrong credentials' })
 
         if (existingUser.otpVerified) {
             let token = jwt.sign({ email: existingUser.email, role: existingUser.role, }, process.env.TOKEN, { expiresIn: '7d' })

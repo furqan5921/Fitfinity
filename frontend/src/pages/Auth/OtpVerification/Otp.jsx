@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { verifyOtp } from '../../../redux/authReducer/actions';
 import FillDetails from '../../../components/FillDetails';
 import SignupSuccess from '../../../components/SignupSuccess';
-import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Otp = () => {
 
@@ -27,12 +27,6 @@ const Otp = () => {
     const handleClick = () => {
         dispatch(verifyOtp({ otp, email }))
     }
-
-    //when otpVerified == true redirect to login
-    if(otpVerified){
-        return <Navigate to='/login' />
-    }
-
 
     return (
         <div id='otp'>
@@ -57,7 +51,7 @@ const Otp = () => {
                     </Center>
                     <Center
                         fontSize={{ base: 'sm', sm: 'md' }}
-                         as='i'>
+                        as='i'>
                         Please enter the Email used for signup and the code which has been sent to your email
                     </Center>
                     <FormControl>
@@ -84,19 +78,30 @@ const Otp = () => {
                         wrongOtp && <FillDetails text={'Incorrect Otp!'} />
                     }
                     {
-                        successOtp &&  <SignupSuccess text={'OTP Verified!'} />
+                        successOtp && <SignupSuccess text={'OTP Verified!'} />
                     }
 
                     <Stack spacing={6}>
-                        <Button
-                            onClick={handleClick}
-                            bg={'blue.400'}
-                            color={'white'}
-                            _hover={{
-                                bg: 'blue.500',
-                            }}>
-                            Verify
-                        </Button>
+
+                        {
+                            !otpVerified ? <Button
+                                onClick={handleClick}
+                                bg={'blue.400'}
+                                color={'white'}
+                                _hover={{
+                                    bg: 'blue.500',
+                                }}>
+                                Verify
+                            </Button> : <Link to='/login'><Button
+                                bg={'blue.400'}
+                                color={'white'}
+                                _hover={{
+                                    bg: 'blue.500',
+                                }}>
+                                Login
+                            </Button></Link>
+                        }
+
                     </Stack>
                 </Stack>
             </Flex>

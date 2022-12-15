@@ -9,7 +9,9 @@ let initState = {
     fillSignup: false,
     wrongOtp: false,
     successOtp: false,
-    invalidEmail: false
+    invalidEmail: false,
+    wrongLoginCreds: false,
+    redirectOtp: false
 }
 
 export const authReducer = (state = initState, action) => {
@@ -29,9 +31,12 @@ export const authReducer = (state = initState, action) => {
             }
 
         case LOGIN:
-            localStorage.setItem('authToken', action.payload)
+            if (action.payload !== 'wrong credentials' && action.payload !== 'verify otp')
+                localStorage.setItem('authToken', action.payload.token)
             return {
-                ...state, isAuth: true
+                ...state, isAuth: action.payload.token ? true : false,
+                wrongLoginCreds: action.payload === 'wrong credentials' ? true : false,
+                redirectOtp: action.payload === 'verify otp' ? true : false
             }
 
         case FILLSIGNUP:

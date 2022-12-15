@@ -7,7 +7,7 @@ import { fillSignupa, signup } from '../../../redux/authReducer/actions';
 import FillDetails from '../../../components/FillDetails';
 import UserExists from '../../../components/UserExists';
 import SignupSuccess from '../../../components/SignupSuccess';
-import { Navigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
 
 const Signup = () => {
 
@@ -22,6 +22,7 @@ const Signup = () => {
     })
     const dispatch = useDispatch();
     const [tick, setTick] = useState(false)
+    const navigate = useNavigate()
     const { signupState, userExists, fillSignup } = useSelector(s => s.auth)
 
     const handleChange = (e) => {
@@ -52,7 +53,7 @@ const Signup = () => {
     }
 
     if (signupState) {
-        return <Navigate to='/otp' />
+        navigate('/otp')
     }
 
     return (
