@@ -1,10 +1,13 @@
 import { Button, FormLabel, Input, Text } from '@chakra-ui/react';
 import AuthNav from '../../../components/AuthNav';
 import './login.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import react from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../../redux/authReducer/actions';
+import { useState } from 'react';
+import FillDetails from '../../../components/FillDetails';
+import SignupSuccess from '../../../components/SignupSuccess';
 
 export default function Login() {
 
@@ -12,9 +15,15 @@ export default function Login() {
     email: "",
     password: ""
   })
+  const [fill, setFill] = useState(false)
   const dispatch = useDispatch()
-  const { isAuth } = useSelector(s=>s.auth)
+
+  const { isAuth, wrongLoginCreds, redirectOtp } = useSelector(s => s.auth)
+
+
+
   
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDetails({ ...details, [name]: value })
@@ -23,16 +32,21 @@ export default function Login() {
   const handleClick = () => {
     if (details.email && details.password) {
       if ((details.email).includes('@gmail.com')) {
+        setFill(false)
         dispatch(login(details))
       } else
-        console.log('give proper email');
-
+        setFill(true)
     } else
-      console.log('fill');
-    //set state and set error
+      setFill(true)
   }
 
-  //redirect to dashboard if isAuth is true
+  if(isAuth){
+    return <Navigate to='/dashboard' />
+  }
+
+  if(redirectOtp){
+    return <Navigate to='/otp' />
+  }
 
   return (
     <div id='login'>
@@ -46,13 +60,27 @@ export default function Login() {
         <br />
         <br />
         <FormLabel>Password</FormLabel>
-        <Input name='password' onChange={handleChange} placeholder='Password' />
+        <Input type='password' name='password' onChange={handleChange} placeholder='Password' />
+        <div>
+          {
+            fill && <FillDetails text={'Please fill all the details!'} />
+          }
+          {
+            wrongLoginCreds && <FillDetails text={'Wrong credentials!'} />
+          }
+          {
+            redirectOtp && <FillDetails text={'Please verify OTP!'} />
+          }
+          {
+            isAuth && <SignupSuccess text={'Login Successful!'} />
+          }
+        </div>
         <Button onClick={handleClick} marginTop={'6vh'} backgroundColor='#004949' color='white'>SIGN UP</Button>
         <br /><br />
         <Link className='links'><Text as='i' color='#004949'>Forgot your password?</Text></Link>
         <br /><br />
         <Text>Not a member?</Text>
-        <Link className='links'><Text as='i' color='#004949'>Sign Up</Text></Link>
+        <Link to='/signup' className='links'><Text as='i' color='#004949'>Sign Up</Text></Link>
 
 
       </div>

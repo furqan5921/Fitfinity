@@ -3,7 +3,11 @@ import './signup.css'
 import AuthNav from '../../../components/AuthNav';
 import { Button, Checkbox, FormLabel, HStack, Input, Radio, RadioGroup, Text } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux'
-import { signup, storeEmail } from '../../../redux/authReducer/actions';
+import { fillSignupa, signup } from '../../../redux/authReducer/actions';
+import FillDetails from '../../../components/FillDetails';
+import UserExists from '../../../components/UserExists';
+import SignupSuccess from '../../../components/SignupSuccess';
+import { useNavigate } from "react-router-dom"
 
 const Signup = () => {
 
@@ -18,9 +22,8 @@ const Signup = () => {
     })
     const dispatch = useDispatch();
     const [tick, setTick] = useState(false)
-    const { signupState } = useSelector(s => s.auth)
-
-    // signupState == true redirect to otp page
+    const navigate = useNavigate()
+    const { signupState, userExists, fillSignup } = useSelector(s => s.auth)
 
     const handleChange = (e) => {
         if (e === 'male' || e === 'female') {
@@ -35,20 +38,23 @@ const Signup = () => {
         if (details.email && details.password && details.sex && details.birthday && details.height && details.weight) {
             if ((details.email).includes('@gmail.com'))
                 if (details.password === details.cPassword) {
+                    dispatch(fillSignupa(false))
                     dispatch(signup(details))
+                    alert('Please wait request is being processed')
                 }
                 else
-                    console.log('verify password');
+                    dispatch(fillSignupa(true))
             else
-                console.log('invalid email');
+                dispatch(fillSignupa(true))
 
         } else {
-            //state and show alert to fill details
-            console.log('fill');
+            dispatch(fillSignupa(true))
         }
     }
 
-
+    if (signupState) {
+        navigate('/otp')
+    }
 
     return (
         <div id='signup'>
@@ -68,6 +74,18 @@ const Signup = () => {
                     <div>
                         <FormLabel>Confirm Password</FormLabel>
                         <Input name='cPassword' onChange={handleChange} placeholder='Confirm Password' type='password' />
+                    </div>
+
+                    <div>
+                        {
+                            fillSignup && <FillDetails text={' Please fill all the details!'} />
+                        }
+                        {
+                            userExists && <UserExists text={'User already exists!'} />
+                        }
+                        {
+                            signupState && <SignupSuccess text={'Signup Successful!'} />
+                        }
                     </div>
                 </div>
 

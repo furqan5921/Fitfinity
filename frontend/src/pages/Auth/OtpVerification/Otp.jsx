@@ -8,25 +8,25 @@ import {
     Flex,
     Input,
     Stack,
-    useColorModeValue,
     HStack,
 } from '@chakra-ui/react';
 import { PinInput, PinInputField } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { verifyOtp } from '../../../redux/authReducer/actions';
+import FillDetails from '../../../components/FillDetails';
+import SignupSuccess from '../../../components/SignupSuccess';
+import { Link } from 'react-router-dom';
 
 const Otp = () => {
 
     const [otp, setOtp] = useState('')
     const [email, setEmail] = useState('')
     const dispatch = useDispatch()
-    const { otpVerified } = useSelector(s=>s.auth)
+    const { wrongOtp, successOtp, invalidEmail } = useSelector(s => s.auth)
 
     const handleClick = () => {
-        dispatch(verifyOtp({otp, email}))
+        dispatch(verifyOtp({ otp, email }))
     }
-    
-    //when otpVerified == true redirect to login
 
     return (
         <div id='otp'>
@@ -40,7 +40,6 @@ const Otp = () => {
                     spacing={4}
                     w={'full'}
                     maxW={'sm'}
-                    bg={useColorModeValue('white', 'gray.700')}
                     rounded={'xl'}
                     boxShadow={'lg'}
                     p={6}
@@ -52,7 +51,7 @@ const Otp = () => {
                     </Center>
                     <Center
                         fontSize={{ base: 'sm', sm: 'md' }}
-                        color={useColorModeValue('gray.800', 'gray.400')} as='i'>
+                        as='i'>
                         Please enter the Email used for signup and the code which has been sent to your email
                     </Center>
                     <FormControl>
@@ -71,16 +70,38 @@ const Otp = () => {
                             </HStack>
                         </Center>
                     </FormControl>
+
+                    {
+                        invalidEmail && <FillDetails text={'Invalid Email!'} />
+                    }
+                    {
+                        wrongOtp && <FillDetails text={'Incorrect Otp!'} />
+                    }
+                    {
+                        successOtp && <SignupSuccess text={'OTP Verified!'} />
+                    }
+
                     <Stack spacing={6}>
-                        <Button
-                            onClick={handleClick}
-                            bg={'blue.400'}
-                            color={'white'}
-                            _hover={{
-                                bg: 'blue.500',
-                            }}>
-                            Verify
-                        </Button>
+
+                        {
+                            !successOtp ? <Button
+                                onClick={handleClick}
+                                bg={'blue.400'}
+                                color={'white'}
+                                _hover={{
+                                    bg: 'blue.500',
+                                }}>
+                                Verify
+                            </Button> : <Link to='/login'><Button
+                                bg={'blue.400'}
+                                color={'white'}
+                                _hover={{
+                                    bg: 'blue.500',
+                                }}>
+                                Login
+                            </Button></Link>
+                        }
+
                     </Stack>
                 </Stack>
             </Flex>
