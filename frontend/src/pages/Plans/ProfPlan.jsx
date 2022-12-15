@@ -22,10 +22,14 @@ import {
 import { useState } from "react";
 import styles from "./goldPlan.module.css";
 import data from "./priceData.json";
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 
 const ProfPlan = () => {
-  const handleOpen = () => {};
-  console.log(data.priceData[0].title);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
 
   return (
     <Box className={styles.bgImage}>
@@ -60,7 +64,13 @@ const ProfPlan = () => {
             <ListItem>Cronometer Pro tutorial webinars</ListItem>
           </UnorderedList>
 
-          <Button onClick={() => handleOpen()}>VIEW ALL FEATURES</Button>
+          <Button
+            variant={"outline"}
+            colorScheme="orange"
+            onClick={() => handleOpen()}
+          >
+            VIEW ALL FEATURES
+          </Button>
         </Box>
         <Box>
           <Text>$29.95</Text>
@@ -70,6 +80,56 @@ const ProfPlan = () => {
           </Button>
         </Box>
       </Flex>
+      {open ? (
+        <TableContainer>
+          <Table variant="striped" colorScheme="#fafbff">
+            <Thead>
+              <Tr>
+                <Th w="70%">
+                  <Text>Gold Features</Text>
+                  <Text>USD per Year - billed annually</Text>
+                </Th>
+                <Th w="15%">
+                  <Image src="https://cdn1.cronometer.com/plans/basic-logo.svg" />
+                  <Text>$0.00</Text>
+                </Th>
+                <Th w="15%">
+                  <Image src="https://cdn1.cronometer.com/plans/gold-logo.svg" />
+                  <Text>$49.99</Text>
+                </Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {data.priceData.map((el) => {
+                return (
+                  <Tr>
+                    <Td w="70%">
+                      <Text>{el.title}</Text>
+                      <Text>{el.details}</Text>
+                    </Td>
+                    <Td w="15%">
+                      {el.basic ? (
+                        <CheckIcon color="green" />
+                      ) : (
+                        <CloseIcon color="red" />
+                      )}
+                    </Td>
+                    <Td w="15%">
+                      {el.gold ? (
+                        <CheckIcon color="green" />
+                      ) : (
+                        <CloseIcon color="red" />
+                      )}
+                    </Td>
+                  </Tr>
+                );
+              })}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      ) : (
+        <Box></Box>
+      )}
     </Box>
   );
 };

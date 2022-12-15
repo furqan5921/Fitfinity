@@ -18,10 +18,13 @@ const Plans = () => {
       <Text fontSize={["l", "xl", "2xl"]} fontWeight="bold" w="95%" m="auto">
         Gift Subscriptions
       </Text>
+      <br />
       <GiftSubscription />
+      <br />
       <Text fontSize={["l", "xl", "2xl"]} fontWeight="bold" w="95%" m="auto">
         Plans for Professionals
       </Text>
+      <br />
       <ProfPlan />
       <br />
       <Enterprise />

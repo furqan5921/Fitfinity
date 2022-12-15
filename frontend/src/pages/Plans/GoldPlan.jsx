@@ -22,6 +22,7 @@ import {
 import { useState } from "react";
 import styles from "./goldPlan.module.css";
 import data from "./priceData.json";
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 
 const GoldPlan = () => {
   const [changePrice, setChangePrice] = useState(false);
@@ -55,7 +56,14 @@ const GoldPlan = () => {
             <ListItem>Nutrition scores</ListItem>
             <ListItem>Plus all our premium features</ListItem>
           </UnorderedList>
-          <Button onClick={() => handleOpen()}>VIEW ALL FEATURES</Button>
+          <br />
+          <Button
+            variant={"outline"}
+            colorScheme="orange"
+            onClick={() => handleOpen()}
+          >
+            VIEW ALL FEATURES
+          </Button>
         </Box>
         <Box mt={["20px", "20px", "0px"]}>
           {changePrice ? (
@@ -119,8 +127,20 @@ const GoldPlan = () => {
                       <Text>{el.title}</Text>
                       <Text>{el.details}</Text>
                     </Td>
-                    <Td w="15%">{el.basic ? "Okay" : "Not Okay"}</Td>
-                    <Td w="15%">{el.gold ? "Okay" : "Not Okay"}</Td>
+                    <Td w="15%">
+                      {el.basic ? (
+                        <CheckIcon color="green" />
+                      ) : (
+                        <CloseIcon color="red" />
+                      )}
+                    </Td>
+                    <Td w="15%">
+                      {el.gold ? (
+                        <CheckIcon color="green" />
+                      ) : (
+                        <CloseIcon color="red" />
+                      )}
+                    </Td>
                   </Tr>
                 );
               })}
