@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 import GoldPlan from "./GoldPlan";
 import GiftSubscription from "./GiftSubscription";
+import ProfPlan from "./ProfPlan";
+import Enterprise from "./Enterprise";
+import FAQ from "./FAQ";
 
 const Plans = () => {
   return (
@@ -16,6 +19,15 @@ const Plans = () => {
         Gift Subscriptions
       </Text>
       <GiftSubscription />
+      <Text fontSize={["l", "xl", "2xl"]} fontWeight="bold" w="95%" m="auto">
+        Plans for Professionals
+      </Text>
+      <ProfPlan />
+      <br />
+      <Enterprise />
+      <br />
+      <FAQ />
+      <br />
     </Box>
   );
 };
