@@ -15,6 +15,10 @@ export const verifyOtp = (details) => async (dispatch) => {
     console.log(res.data);
     if (res.data.message === 'signup successful')
         dispatch({ type: VERIFYOTP, payload: true })
+    else if(res.data.message === 'wrong otp')
+        dispatch({type: VERIFYOTP, payload: false})
+    else
+        dispatch({type: VERIFYOTP, payload: 'email invalid'})    
 }
 
 export const login = (details) => async (dispatch) => {

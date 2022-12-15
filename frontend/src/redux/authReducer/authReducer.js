@@ -6,7 +6,10 @@ let initState = {
     otpVerified: false,
     signupState: false,
     userExists: false,
-    fillSignup: false
+    fillSignup: false,
+    wrongOtp: false,
+    successOtp: false,
+    invalidEmail: false
 }
 
 export const authReducer = (state = initState, action) => {
@@ -14,6 +17,9 @@ export const authReducer = (state = initState, action) => {
         case VERIFYOTP:
             return {
                 ...state, otpVerified: action.payload,
+                wrongOtp: action.payload && action.payload !== 'email invalid' ? false : true,
+                successOtp: action.payload && action.payload !== 'email invalid' ? true : false,
+                invalidEmail: action.payload === 'email invalid' ? true : false
             }
 
         case SIGNUP:
@@ -30,7 +36,7 @@ export const authReducer = (state = initState, action) => {
 
         case FILLSIGNUP:
             return {
-                ...state,  fillSignup: action.payload, 
+                ...state, fillSignup: action.payload,
                 userExists: false
             }
         default:

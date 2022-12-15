@@ -67,6 +67,8 @@ app.post('/otp', async (req, res) => {
             } else {
                 return res.send({ message: 'wrong otp' })
             }
+        } else {
+            return res.send({ message: 'invalid email' })
         }
 
     } catch (e) {

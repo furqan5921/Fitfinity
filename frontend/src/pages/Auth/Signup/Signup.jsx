@@ -51,7 +51,7 @@ const Signup = () => {
         }
     }
 
-    if(signupState){
+    if (signupState) {
         return <Navigate to='/otp' />
     }
 
@@ -77,13 +77,13 @@ const Signup = () => {
 
                     <div>
                         {
-                            fillSignup && <FillDetails />
+                            fillSignup && <FillDetails text={' Please fill all the details!'} />
                         }
                         {
-                            userExists && <UserExists />
+                            userExists && <UserExists text={'User already exists!'} />
                         }
                         {
-                            signupState && <SignupSuccess />
+                            signupState && <SignupSuccess text={'Signup Successful!'} />
                         }
                     </div>
                 </div>
