@@ -63,7 +63,7 @@ const ProfPlan = () => {
             <ListItem>List your business on our public pro directory</ListItem>
             <ListItem>Cronometer Pro tutorial webinars</ListItem>
           </UnorderedList>
-
+          <br />
           <Button
             variant={"outline"}
             colorScheme="orange"
