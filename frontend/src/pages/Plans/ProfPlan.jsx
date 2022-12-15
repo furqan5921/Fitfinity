@@ -39,7 +39,7 @@ const ProfPlan = () => {
       >
         <Box>
           <Image
-            w={["50%", "40%", "100%"]}
+            w={["50%", "40%", "40%"]}
             src="https://cdn1.cronometer.com/plans/pro-no-icon-logo.svg"
           />
           <br />

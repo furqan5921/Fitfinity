@@ -8,7 +8,6 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import styles from "./goldPlan.module.css";
 import data from "./priceData.json";
 
@@ -32,7 +31,7 @@ const Enterprise = () => {
             For hospitals, universities and research teams
           </Text>
           <br />
-          <UnorderedList>
+          <UnorderedList fontSize={["10px", "13px", "17px"]}>
             <ListItem>All Cronometer Pro features</ListItem>
             <ListItem>HIPAA compliance</ListItem>
             <ListItem>Risk assessment and compliance review</ListItem>
@@ -43,14 +42,19 @@ const Enterprise = () => {
         </Box>
         <Box>
           <Text
-            fontSize={["l", "xl", "2xl"]}
+            fontSize={["m", "l", "2xl"]}
             fontWeight={"bold"}
             textAlign={["left", "left", "right"]}
           >
             Custom
           </Text>
           <br />
-          <Button _hover={"none"} bg="#44d07b" color={"white"}>
+          <Button
+            _hover={"none"}
+            bg="#44d07b"
+            color={"white"}
+            fontSize={["10px", "13px", "17px"]}
+          >
             CONTACT US
           </Button>
         </Box>

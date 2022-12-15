@@ -11,7 +11,7 @@ const GiftSubscription = () => {
       >
         <Box>
           <Image
-            w={["50%", "40%", "100%"]}
+            w={["50%", "40%", "40%"]}
             src="https://cdn1.cronometer.com/plans/gold-no-icon-logo.svg"
           />
           <br />
