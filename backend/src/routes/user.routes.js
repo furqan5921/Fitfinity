@@ -24,7 +24,7 @@ app.post('/signup', async (req, res) => {
     try {
         const otp = Math.floor(1000 + Math.random() * 9000);
         let existingUser = await userModel.findOne({ email });
-        if (existingUser) return res.status(400).send('user already exists')
+        if (existingUser) return res.send('user already exists')
 
         const newUser = new userModel({ email, password, sex, birthday, height, weight });
         await newUser.save()
@@ -67,6 +67,8 @@ app.post('/otp', async (req, res) => {
             } else {
                 return res.send({ message: 'wrong otp' })
             }
+        } else {
+            return res.send({ message: 'invalid email' })
         }
 
     } catch (e) {
@@ -116,7 +118,7 @@ app.post('/login', async (req, res) => {
     try {
         let existingUser = await userModel.findOne({ email, password });
 
-        if (!existingUser) return res.status(401).send({ message: 'wrong credentials' })
+        if (!existingUser) return res.send({ message: 'wrong credentials' })
 
         if (existingUser.otpVerified) {
             let token = jwt.sign({ email: existingUser.email, role: existingUser.role, }, process.env.TOKEN, { expiresIn: '7d' })

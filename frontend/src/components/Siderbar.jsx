@@ -18,7 +18,7 @@ import {
   IconButton
 } from '@chakra-ui/react';
 import { SidebarContent } from './SidebarContent';
-import { /*FiBell*/ FiChevronDown, FiMenu } from 'react-icons/fi';
+import { FiChevronDown, FiMenu } from 'react-icons/fi';
 import {AiTwotoneSound} from 'react-icons/ai';
 
 
@@ -26,7 +26,7 @@ import {AiTwotoneSound} from 'react-icons/ai';
 export default function Sidebar({children}) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
-      <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+      <Box minH="100vh" w='auto' m='auto' bg={useColorModeValue('pink.50', 'pink.100')}>
         <SidebarContent
           onClose={() => onClose}
           display={{ base: 'none', md: 'block' }}
@@ -45,7 +45,7 @@ export default function Sidebar({children}) {
         </Drawer>
         {/* mobilenav */}
         <MobileNav onOpen={onOpen} />
-        <Box ml={{ base: 0, md: 60 }} p="4">
+        <Box ml={{ base: 0, md: 80 }} p="4">
           {children}
         </Box>
       </Box>

@@ -1,11 +1,12 @@
 import React from 'react'
-import Actions from '../../components/Actions'
+// import { Route, Routes } from 'react-router-dom'
+import DashHome from '../../components/DashHome'
 import Sidebar from '../../components/Siderbar'
 
 function Dashboard() {
   return (
     <Sidebar>
-      <Actions />
+      <DashHome />
     </Sidebar>
   )
 }
