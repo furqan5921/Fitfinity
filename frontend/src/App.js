@@ -1,18 +1,11 @@
-import Allroutes from "./allRoutes/Allroutes";
 
-import Navbar from "./components/Navbar/Navbar";
-import Sidebar from "./components/Navbar/Sidebar";
-
+import Plans from "./pages/Plans/Plans";
 function App() {
   return (
     <div>
-      {/* Home */}
-      {/* <Navbar /> */}
-      <Sidebar />
-      <Allroutes />
+
     </div>
   );
-
 }
 
 export default App;

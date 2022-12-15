@@ -13,7 +13,7 @@ export const DashboardNav = ({ icon, children, ...rest }) => {
           p="4"
           mx="4"
           borderRadius="lg"
-          fontSize="20px"
+          fontSize="27px"
           lineHeight={'1.3'}
           role="group"
               color={'white'}
@@ -26,7 +26,7 @@ export const DashboardNav = ({ icon, children, ...rest }) => {
           {icon && (
             <Icon
               mr="4"
-              fontSize="22px"
+              fontSize="27px"
               lineHeight={'1.3'}
               _groupHover={{
                 color: 'orange',
