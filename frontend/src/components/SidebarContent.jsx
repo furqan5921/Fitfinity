@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Box,
   CloseButton,
   Divider,
@@ -7,6 +12,7 @@ import {
   HStack,
   IconButton,
   Image,
+  Spacer,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -50,9 +56,9 @@ export const SidebarContent = ({ onClose, ...rest }) => {
         borderBottomRightRadius={'30px'}
         borderRightColor={useColorModeValue('gray.200', 'gray.700')}
         // w={{ base: 'full', md: '15%' }}
-        w={navSize === "small" ? "105px" : "18%"}
+        w={navSize === "small" ? {sm:'15%',md:"105px"} : {sm:'50%',lg:"18%"}}
         pos="fixed"
-        h="full"
+        h="100vh"
         
         {...rest}>
         <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
@@ -68,7 +74,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
                     mt={5}
                     colorScheme='white'
                     _hover={{ background: 'none' }}
-                    icon={<FiMenu size='lg' />}
+                    icon={<FiMenu size='22px' />}
                     onClick={() => {
                         if (navSize === "small")
                             changeNavSize("large")
@@ -80,25 +86,152 @@ export const SidebarContent = ({ onClose, ...rest }) => {
         </Flex>
         <Divider orientation='horizontal' />
         <Box 
-        // h="200vh"
-        overflow={'scroll'}
+        h="75%"
+        // overflowY={'scroll'}
+        overflowY={'scroll'}
         css={{
           '&::-webkit-scrollbar': {
-            width: '4px',
+            width: '10px',
           },
           '&::-webkit-scrollbar-track': {
-            width: '6px',
+            width: '10px',
+            scrollbarColor:'red',
+            color:"white"
           },
           '&::-webkit-scrollbar-thumb': {
             background: 'black',
-            borderRadius: '24px',
+            borderRadius: '10px',
           },
         }}>
-          {navSize==='large'?LinkItems.map((link) => (
-          <DashboardNav key={link.name} icon={link.icon}>
-            {link.name}
-          </DashboardNav>
-        )):
+          {navSize==='large'?
+                <Box >
+                   <Accordion color="white">
+                  <AccordionItem border="none">
+                    
+                <DashboardNav icon={FiHome}href={'dashboard'}>
+                      <AccordionButton fontSize={'22px'}>Dashboard
+                      </AccordionButton>
+                      </DashboardNav>
+                      
+                      </AccordionItem>
+                      </Accordion>
+                      <Accordion allowToggle color="white">
+                  <AccordionItem border="none">
+                    
+                      
+                <DashboardNav icon={ImFileZip}  href={'diary'}>
+                <AccordionButton fontSize={'22px'}>Diary
+                </AccordionButton>
+                      </DashboardNav>
+                      
+                      </AccordionItem>
+                      </Accordion>
+                <Accordion allowToggle color="white">
+                  <AccordionItem border="none">
+                    <DashboardNav icon={HiChartBar}>
+                      <AccordionButton fontSize={'22px'}>
+                        Trends
+                        <Spacer />
+                        <AccordionIcon />
+                      </AccordionButton>
+                        </DashboardNav>
+                    <AccordionPanel pb={4}>
+                      
+                      <DashboardNav >Charts</DashboardNav>
+                      <DashboardNav >Nutrition Report</DashboardNav>
+                      <DashboardNav >Print Report</DashboardNav>
+                      <DashboardNav >Snapshots</DashboardNav>
+                    </AccordionPanel>
+                  </AccordionItem>
+                </Accordion>
+                <Accordion allowToggle color="white">
+                  <AccordionItem border="none">
+                    
+                    <DashboardNav icon={CiApple}>
+                      <AccordionButton fontSize={'22px'}>
+                        Foods
+                        <Spacer />
+                        <AccordionIcon />
+                      </AccordionButton>
+                        </DashboardNav>
+                    
+                    <AccordionPanel pb={4}>
+                      <DashboardNav >Custom Recipies</DashboardNav>
+                      <DashboardNav >Custom Foods</DashboardNav>
+                      <DashboardNav >Ask the Oracle</DashboardNav>
+                      <DashboardNav >Search Foods</DashboardNav>
+                    </AccordionPanel>
+                  </AccordionItem>
+                </Accordion>
+                <Accordion allowToggle color="white">
+                  <AccordionItem border="none">
+                    
+                    <DashboardNav icon={FiSettings}>
+                      <AccordionButton fontSize={'22px'}>
+                        Setting
+                        <Spacer />
+                        <AccordionIcon />
+                      </AccordionButton>
+                        </DashboardNav>
+                    
+                    <AccordionPanel pb={4}>
+                      <DashboardNav >Account</DashboardNav>
+                      <DashboardNav >Profile + Target</DashboardNav>
+                      <DashboardNav >Target Scheldular</DashboardNav>
+                      <DashboardNav >Fasting</DashboardNav>
+                      <DashboardNav >Display</DashboardNav>
+                      <DashboardNav >Devices</DashboardNav>
+                      <DashboardNav >Sharing</DashboardNav>
+                    </AccordionPanel>
+                  </AccordionItem>
+                </Accordion>
+                <Accordion allowToggle color="white">
+                  <AccordionItem border="none">
+                    
+                <DashboardNav icon={BiDollarCircle}  href={'plans'}>
+                <AccordionButton fontSize={'22px'}>
+                        
+                  Plans
+                  </AccordionButton>
+                  </DashboardNav>
+                  
+                  </AccordionItem>
+                  </Accordion>
+                  <Accordion allowToggle color="white">
+                  <AccordionItem border="none">
+                    
+                <DashboardNav icon={FiHelpCircle}  href={'help'}>
+                <AccordionButton fontSize={'22px'}>
+                  Help
+                  </AccordionButton>
+                  </DashboardNav>
+                  
+                  </AccordionItem>
+                  </Accordion>
+                <Accordion allowToggle color="white">
+                  <AccordionItem border="none">
+                    
+                    <DashboardNav icon={BiInfoCircle}>
+                      <AccordionButton fontSize={'22px'}>
+                        About
+                        <Spacer />
+                        <AccordionIcon />
+                      </AccordionButton>
+                        </DashboardNav>
+                    
+                    <AccordionPanel pb={4}>
+                      <DashboardNav >Privacy</DashboardNav>
+                      <DashboardNav >Terms of service</DashboardNav>
+                      <DashboardNav >Blog</DashboardNav>
+                      <DashboardNav >Forums</DashboardNav>
+                      <DashboardNav >Support</DashboardNav>
+                      <DashboardNav >About Us</DashboardNav>
+                    </AccordionPanel>
+                  </AccordionItem>
+                </Accordion>
+              </Box>
+          
+        :
         LinkItems.map((link) => (
             <DashboardNav key={link.name} icon={link.icon}>
               {/* {link.name} */}
@@ -106,54 +239,61 @@ export const SidebarContent = ({ onClose, ...rest }) => {
           ))
     }
         <Divider orientation='horizontal' />
+                  
        <HStack
-                    mt={{ lg: 10, md: 10 }}
+                    mt={{ lg: 5, md: 6 }}
                     spacing={5}
+                    flexWrap='wrap'
                     px={5}
                     alignItems="flex-start">
                     <IconButton
                       aria-label="facebook"
                       variant="outline"
-                      size="lg"
+                      size="md"
                       // bg="white"
                       colorScheme='whiteAlpha'
                       borderColor={'white'}
                       isRound={true}
+                      p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaTwitter size="28px" />}
+                      icon={<FaTwitter size={{base:'15px',md:"18px",lg:"22px"}} />}
                     />
                     <IconButton
                       aria-label="github"
                       variant="outline"
-                      size="lg"
+                      size="md"
                       // bg="white"
+
                       colorScheme='whiteAlpha'
                       borderColor={'white'}
                       isRound={true}
+                      p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaFacebook size="28px" />}
+                      icon={<FaFacebook size={{base:'15px',md:"18px",lg:"22px"}} />}
                     />
                     <IconButton
                       aria-label="discord"
                       variant="outline"
-                      size="lg"
+                      size="md"
                       // bg="white"
                       colorScheme='whiteAlpha'
                       borderColor={'white'}
                       isRound={true}
+                      p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaInstagram size="28px" />}
+                      icon={<FaInstagram size={{base:'15px',md:"18px",lg:"22px"}} />}
                     />
                     <IconButton
                       aria-label="discord"
                       variant="outline"
-                      size="lg"
+                      size="md"
                       // bg="white"
                       colorScheme='whiteAlpha'
                       borderColor={'white'}
                       isRound={true}
+                      p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaYoutube size="28px" />}
+                      icon={<FaYoutube size={{base:'15px',md:"18px",lg:"20px"}} />}
                     />
                   </HStack>
                   </Box>
