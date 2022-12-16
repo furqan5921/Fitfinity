@@ -2,18 +2,18 @@ import React from 'react';
 import {
   Flex,
   Icon,
-  Link
+ 
 } from '@chakra-ui/react';
-
-export const DashboardNav = ({ icon, children, ...rest }) => {
+import  {Link} from 'react-router-dom'
+export const DashboardNav = ({ icon,href, children, ...rest }) => {
     return (
-      <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+      <Link to={href} style={{ textDecoration: 'none' }} >
         <Flex
           align="center"
           p="4"
           mx="4"
           borderRadius="lg"
-          fontSize="27px"
+          fontSize={{base:"15px",sm:"18px",md:"23px"}}
           lineHeight={'1.3'}
           role="group"
               color={'white'}
