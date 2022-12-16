@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   AspectRatio,
   Box,
@@ -8,8 +8,21 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const VideoPart = () => {
+  const { isAuth } = useSelector((s) => s.auth);
+  const navigate = useNavigate();
+  if (isAuth) {
+    navigate("/dashboard");
+  }
+  useEffect(()=>{
+    if (isAuth) {
+      navigate("/dashboard");
+    }
+  },[])
+
   return (
     <Box
       w="100%"
