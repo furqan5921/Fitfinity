@@ -1,14 +1,7 @@
-import {
-  AspectRatio,
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
+
+import Footer from "./Footer";
 import HomeReview from "./HomeReview";
 import NutritionPage from "./NutritionPage";
 import SignPage from "./SignPage";
@@ -27,6 +20,7 @@ const Home = () => {
       <SignPage />
       <Sych />
       <HomeReview />
+      <Footer />
     </Box>
   );
 };
