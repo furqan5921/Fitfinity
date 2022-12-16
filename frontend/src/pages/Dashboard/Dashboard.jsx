@@ -8,12 +8,13 @@ import Plans from '../Plans/Plans'
 function Dashboard() {
   return (
     <Sidebar>
-      {/* <DashHome /> */}
+      <DashHome />
 
-      <Routes>
+      {/* <Routes>
 <Route path="/" element={<h2>Home Page</h2>} />
-{/* <Route path='/plans' element={<Plans />} /> */}
-</Routes>      
+<Route path='/plans' element={<Plans />} />
+      </Routes> */}
+
     </Sidebar>
   )
 }
