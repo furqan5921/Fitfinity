@@ -4,8 +4,8 @@ import Allroutes from "./allRoutes/Allroutes";
 function App() {
   return (
     <div>
-      <Navbar />
-      <Sidebar />
+      {/* <Navbar />
+      <Sidebar /> */}
       <Allroutes />
     </div>
   );

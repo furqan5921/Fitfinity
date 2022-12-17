@@ -4,13 +4,18 @@ import {TiTick} from "react-icons/ti"
 import {IoReorderThreeSharp} from "react-icons/io5"
 import Chart1 from "./charts/chart1";
 import Bar1 from "./charts/bar1";
+import { SidebarContent } from "../../components/SidebarContent";
+import { MobileNav } from "../../components/Siderbar";
 
 
 export default function Dairy() {
 
 
     return (
-        <Box backgroundColor="rgb(255,252,246)" fontFamily="Work Sans,sans-serif" w={{base:"100%",md:"80%"}} border="1px solid">
+        <>
+        <SidebarContent/>
+        <Box backgroundColor="rgb(255,252,246)" fontFamily="Work Sans,sans-serif" w={{base:"100%",md:"80%"}} ml={{md:'20%'}} border="1px solid">
+          <MobileNav />
             <Flex gap={{base:"10px",md:"30px",lg:"30px"}} flexDirection={{base:"column", md:"row"}}>
                 <Flex bgColor="white" boxShadow='md' borderRadius="15px" w={{base:"100%", md:"50%"}} p="10px" fontSize="22px" alignItems="center" justifyContent="space-between">
                     <Flex alignItems="center">
@@ -98,5 +103,6 @@ export default function Dairy() {
                 </Box>
             </Box>
         </Box>
+        </>
     )
 }
