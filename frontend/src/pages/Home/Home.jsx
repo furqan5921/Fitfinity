@@ -9,10 +9,13 @@ import Social from "./Social";
 import Sych from "./Sych";
 import UserData from "./UserData";
 import VideoPart from "./VideoPart";
-
+import Navbar from "../../components/Navbar/Navbar";
+import Sidebar from "../../components/Siderbar";
 const Home = () => {
   return (
     <Box>
+      <Sidebar/>
+      <Navbar/>
       <VideoPart />
       <Social />
       <NutritionPage />
