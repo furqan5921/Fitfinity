@@ -34,6 +34,30 @@ export default function Sidebar({children}) {
           onClose={() => onClose}
           display={{ base: 'none', md: 'block' }}
         />
+        {/* mobilenav */}
+        <MobileNav onOpen={onOpen} />
+        <Box ml={{ base: 0, md: 80 }} p="4">
+          {children}
+        </Box>
+      </Box>
+    );
+  }
+
+  export const MobileNav = ({ ...rest }) => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    return (
+      <Flex
+        ml={{ base: 0, md: 0 }}
+        px={{ base: 4, md: 4 }}
+        height="8vh"
+        alignItems="center"
+        bg={useColorModeValue('gray.50', 'gray.100')}
+        borderBottomWidth="1px"
+        // border= '1px solid red'
+        borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
+        justifyContent={{ base: 'space-between', md: 'flex-end' }}
+        {...rest}>
         <Drawer
           autoFocus={false}
           isOpen={isOpen}
@@ -46,27 +70,6 @@ export default function Sidebar({children}) {
             <SidebarContent onClose={onClose} />
           </DrawerContent>
         </Drawer>
-        {/* mobilenav */}
-        <MobileNav onOpen={onOpen} />
-        <Box ml={{ base: 0, md: 80 }} p="4">
-          {children}
-        </Box>
-      </Box>
-    );
-  }
-
-  const MobileNav = ({ onOpen, ...rest }) => {
-    return (
-      <Flex
-        ml={{ base: 0, md: 60 }}
-        px={{ base: 4, md: 4 }}
-        height="8vh"
-        alignItems="center"
-        bg={useColorModeValue('gray.50', 'gray.100')}
-        borderBottomWidth="1px"
-        borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-        justifyContent={{ base: 'space-between', md: 'flex-end' }}
-        {...rest}>
         <IconButton
           display={{ base: 'flex', md: 'none' }}
           onClick={onOpen}
