@@ -9,8 +9,13 @@ import {
 }
 from '@chakra-ui/react'
 
-export default function ModalTable({data}){
-    return <TableContainer height='50vh' overflowY={'scroll'}   css={{
+export default function ModalTable({data,collapse,searcheck}){
+  const datacheck=(val)=>{
+    searcheck(val)
+    
+    // console.log(val,"print")
+  }
+    return <TableContainer height={collapse?'20vh':'50vh'} overflowY={'scroll'}   css={{
      '&::-webkit-scrollbar': {
        width: '12px',
      },
@@ -35,50 +40,10 @@ export default function ModalTable({data}){
          {
              data.map((el,i)=>
              <Tr key={el.desc+i}>
-                 <Td>{el.desc}</Td>
+                 <Td onClick={()=>{datacheck(el.desc)}}>{el.desc}</Td>
                  <Td>{el.source}</Td>
              </Tr>)
          }
-         {/* <Tr>
-           <Td>inches</Td>
-           <Td>millimetres (mm)</Td>
-         </Tr>
-         <Tr>
-           <Td>feet</Td>
-           <Td>centimetres (cm)</Td>
-         </Tr>
-         <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>
-         <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr>        <Tr>
-           <Td>yards</Td>
-           <Td>metres (m)</Td>
-         </Tr> */}
        </Tbody>
      </Table>
    </TableContainer>

@@ -10,6 +10,7 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  Box,
 } from "@chakra-ui/react";
 import ModalTable from "./ModalTable";
 
@@ -90,7 +91,7 @@ export function FoodModal({ isModalVisible, setIsModalVisible }) {
               <TabPanels>
                 <TabPanel>
                   {" "}
-                  <ModalTable data={data} />
+                  <ModalTable data={data} collapse={true} />
                 </TabPanel>
                 <TabPanel>
                   <ModalTable data={data} />
@@ -112,6 +113,9 @@ export function FoodModal({ isModalVisible, setIsModalVisible }) {
                 </TabPanel>
               </TabPanels>
             </Tabs>
+            <Box h="30vh">
+             Hello this is box for details
+            </Box>
           </ModalBody>
         </ModalContent>
       </Modal>
