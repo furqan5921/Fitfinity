@@ -20,6 +20,7 @@ import DashList from "./DashBoard/DashList";
 import { ExerciseModal } from "./DashBoard/ExerciseModal";
 import { FoodModal } from "./DashBoard/FoodModal";
 import { NotesModal } from "./DashBoard/NotesModal";
+import { MobileNav } from "./Siderbar";
 
 function DashHome() {
   const [isFoodModalVisible, setIsFoodModalVisible] = useState(false);
@@ -40,7 +41,8 @@ function DashHome() {
     setIsBiometricModalVisible(true);
   };
   return (
-    <Box h={"50rem"}>
+    <Box w={["100%", "100%", "80%"]} float={"right"} h={"50rem"}>
+      <MobileNav />
       <Heading>Your Dashboard</Heading>
 
       <HStack
