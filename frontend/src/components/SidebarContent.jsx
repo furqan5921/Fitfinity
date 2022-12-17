@@ -56,7 +56,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
         borderBottomRightRadius={'30px'}
         borderRightColor={useColorModeValue('gray.200', 'gray.700')}
         // w={{ base: 'full', md: '15%' }}
-        w={navSize === "small" ? {sm:'15%',md:"105px"} : {sm:'50%',lg:"18%"}}
+        w={navSize === "small" ? {sm:'15%',md:"105px"} : {sm:'50%',md:"max-Content"}}
         pos="fixed"
         h="100vh"
         
@@ -119,7 +119,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
                   <AccordionItem border="none">
                     
                       
-                <DashboardNav icon={ImFileZip}  href={'diary'}>
+                <DashboardNav icon={ImFileZip}  href={'/dairy'}>
                 <AccordionButton fontSize={'22px'}>Diary
                 </AccordionButton>
                       </DashboardNav>
