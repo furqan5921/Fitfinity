@@ -8,13 +8,9 @@ import {
     TableContainer,
 }
 from '@chakra-ui/react'
-
-export default function ModalTable({data,collapse,searcheck}){
-  const datacheck=(val)=>{
-    searcheck(val)
-    
-    // console.log(val,"print")
-  }
+// reference for pass data from child to parent
+// https://www.freecodecamp.org/news/pass-data-between-components-in-react/ 
+export default function ModalTable({data,collapse,addFood}){
     return <TableContainer height={collapse?'20vh':'50vh'} overflowY={'scroll'}   css={{
      '&::-webkit-scrollbar': {
        width: '12px',
@@ -40,7 +36,7 @@ export default function ModalTable({data,collapse,searcheck}){
          {
              data.map((el,i)=>
              <Tr key={el.desc+i}>
-                 <Td onClick={()=>{datacheck(el.desc)}}>{el.desc}</Td>
+                 <Td onClick={()=>addFood(el.desc)}>{el.desc}</Td>
                  <Td>{el.source}</Td>
              </Tr>)
          }

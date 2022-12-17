@@ -91,7 +91,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
         overflowY={'scroll'}
         css={{
           '&::-webkit-scrollbar': {
-            width: '10px',
+            width: '7px',
           },
           '&::-webkit-scrollbar-track': {
             width: '10px',
@@ -99,7 +99,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
             color:"white"
           },
           '&::-webkit-scrollbar-thumb': {
-            background: 'black',
+            background: 'white',
             borderRadius: '10px',
           },
         }}>
