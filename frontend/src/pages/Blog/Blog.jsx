@@ -18,6 +18,8 @@ import {
 import { ArrowForwardIcon, SearchIcon } from "@chakra-ui/icons";
 import React from "react";
 import styles from "./Blog.module.css";
+import Navbar from "../../components/Navbar/Navbar";
+import Sidebar from "../../components/Navbar/Sidebar";
 
 // const recentPost = [
 //   {
@@ -49,6 +51,8 @@ import styles from "./Blog.module.css";
 const Blog = () => {
   return (
     <>
+      <Navbar />
+      <Sidebar />
       <Box className={styles.heading}>
         <Text
           textAlign={"center"}
