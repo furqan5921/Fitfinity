@@ -3,7 +3,7 @@
 
 
 * [Click Here](https:www.google.com") to view the deployed website.
- <p align="center"><img  width="200" src="https://github.com/furqan5921/evasive-stew-6265/blob/main/frontend/src/Assets/logo.jpeg"/img> </p>
+ <p align="center"><img  width="200" src="https://i.imgur.com/MNHIt59.jpeg"/img> </p>
 <p>
 This was a collaborative construct week project at Masai School.
 Goal behind the project was to create a full stack clone of the Cronometer website as close as possible to the original one with all the major functionalities of this website, such as  Authentication, Landing Page & Dashboard for tracking the nutritions.
