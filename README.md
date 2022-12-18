@@ -2,7 +2,7 @@
 # Cronometer Clone [FitFinity]
 
 
-* [Click Here](https://fitfinity.vercel.app/") to view the deployed website.
+* [Click Here](https://fitfinity.vercel.app/) to view the deployed website.
  <p align="center"><img  width="200" src="https://i.imgur.com/MNHIt59.jpeg"/img> </p>
 <p>
 This was a collaborative construct week project at Masai School.
