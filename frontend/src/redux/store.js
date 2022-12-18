@@ -7,9 +7,11 @@ import {
 
 import thunk from "redux-thunk";
 import { authReducer } from "./authReducer/authReducer";
+import { dataReducer } from "./datareducer/dataReducer";
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  data:dataReducer
 });
 const createComposer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
