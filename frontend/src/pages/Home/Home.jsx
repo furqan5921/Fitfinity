@@ -14,7 +14,7 @@ import Sidebar from "../../components/Siderbar";
 const Home = () => {
   return (
     <Box>
-      <Sidebar/>
+      {/* <Sidebar/> */}
       <Navbar/>
       <VideoPart />
       <Social />

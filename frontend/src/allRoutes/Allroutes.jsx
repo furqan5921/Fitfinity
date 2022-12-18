@@ -11,11 +11,13 @@ import Signup from "../pages/Auth/Signup/Signup";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
 import Plans from "../pages/Plans/Plans";
+import Blog from "../pages/Blog/Blog";
 
 const Allroutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/blog" element={<Blog />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/dashboard" element={<Dashboard />} ></Route>
       <Route path="/dairy" element={<Dairy/>}/>
