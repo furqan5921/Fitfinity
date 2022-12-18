@@ -11,9 +11,20 @@ import {
   Tab,
   TabPanel,
   Box,
+  Button,
+  HStack,
+  Text,
+  IconButton,
+  VStack,
+  Checkbox,
+  Input,
+  Stack,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import ModalTable from "./ModalTable";
-
+import {AiOutlineStar} from 'react-icons/ai'
+import FoodChart from "./FoodChart";
+import Bullet from "./Bullet";
 const data = [
   {
     desc: "banana",
@@ -62,15 +73,18 @@ const data = [
   },
 ];
 
-export function FoodModal({ isModalVisible, setIsModalVisible }) {
+export function FoodModal({ isModalVisible, setIsModalVisible}) {
+  const [food,setFood]= useState('');
   // const { isOpen, onOpen, onClose } = useDisclosure()
+  const addFood = (data) => {
+   setFood(data);
+  //  console.log(food)
+  }
   const onClose = () => {
     setIsModalVisible(false);
   };
   return (
     <>
-      {/*<Button onClick={onOpen}>Open Modal</Button>*/}
-
       <Modal isOpen={isModalVisible} onClose={onClose} size="4xl"  >
         <ModalOverlay />
         <ModalContent>
@@ -91,31 +105,190 @@ export function FoodModal({ isModalVisible, setIsModalVisible }) {
               <TabPanels>
                 <TabPanel>
                   {" "}
-                  <ModalTable data={data} collapse={true} />
+                  <ModalTable data={data} addFood={addFood} collapse={food===""?false:true} />
+                  <Box  p="rem" display={food===""? 'none': 'block'}>
+              <HStack>
+               <Text w='90%' align={'center'} as='p'>  <IconButton
+          variant="ghost"
+          icon={<AiOutlineStar size={'20px'} />}
+        />{food} </Text>
+             <Button onClick={()=> setFood("")} rounded={true} >clear</Button>
+              </HStack>
+             Hello this is box for details 
+             <HStack spacing={20}>
+             <HStack>
+             <FoodChart datas={[7,25,78]} bgc={["yellow","red", "green"]} cal={89} size={'35'} sz={{base:"100px",md:"100px"}}/>
+             <VStack alignItems={'left'}>
+              <HStack><Bullet /> <Text>Protein: 14 g ( <Text as='span' color={'green'} >78 % </Text>) </Text> </HStack>
+              <HStack><Bullet /><Text> Net carbs: 5 g (<Text as='span' color={'red'} >15 % </Text>) </Text></HStack>
+              <HStack> <Bullet /><Text>Fat: 0.6 g  (<Text as='span' color={'black'} >7% </Text>)</Text> </HStack>
+             </VStack>
+             </HStack>
+             <HStack>
+              <VStack alignItems={'left'} spacing={10}>
+                <HStack spacing={10}> <Text>Time Of Day</Text> <Checkbox size={'lg'} /></HStack>
+                <HStack> <Text>Serving Size</Text> <Input type="number" htmlSize={2} width='auto' size='sm' value={1000} placeholder='1000 g' /> </HStack>
+              </VStack>
+             </HStack>
+             </HStack>
+             <Stack m={5} alignItems={'center'}>
+             <Button colorScheme={'green'} borderEndRadius={'2px'}>ADD TO DIARY</Button>
+             </Stack>
+            </Box>
                 </TabPanel>
                 <TabPanel>
                   <ModalTable data={data} />
                 </TabPanel>
                 <TabPanel>
-                  <ModalTable data={data} />
+                  <ModalTable data={data} addFood={addFood} collapse={food===""?false:true} />
+                  
+                  {/* details */}
+                  <Box  p="rem" display={food===""? 'none': 'block'}>
+              <HStack>
+               <Text w='90%' align={'center'} as='p'>  <IconButton
+          variant="ghost"
+          icon={<AiOutlineStar size={'20px'} />}
+        />{food} </Text>
+             <Button onClick={()=> setFood("")} rounded={true} >clear</Button>
+              </HStack>
+             Hello this is box for details 
+             <HStack spacing={20}>
+             <HStack>
+             <FoodChart datas={[7,25,78]} bgc={["yellow","red", "green"]} cal={89} size={'35'} sz={{base:"100px",md:"100px"}}/>
+             <VStack alignItems={'left'}>
+              <HStack><Bullet /> <Text>Protein: 14 g ( <Text as='span' color={'green'} >78 % </Text>) </Text> </HStack>
+              <HStack><Bullet /><Text> Net carbs: 5 g (<Text as='span' color={'red'} >15 % </Text>) </Text></HStack>
+              <HStack> <Bullet /><Text>Fat: 0.6 g  (<Text as='span' color={'black'} >7% </Text>)</Text> </HStack>
+             </VStack>
+             </HStack>
+             <HStack>
+              <VStack alignItems={'left'} spacing={10}>
+                <HStack spacing={10}> <Text>Time Of Day</Text> <Checkbox size={'lg'} /></HStack>
+                <HStack> <Text>Serving Size</Text> <Input type="number" htmlSize={2} width='auto' size='sm' value={1000} placeholder='1000 g' /> </HStack>
+              </VStack>
+             </HStack>
+             </HStack>
+             <Stack m={5} alignItems={'center'}>
+             <Button colorScheme={'green'} borderEndRadius={'2px'}>ADD TO DIARY</Button>
+             </Stack>
+            </Box>
+                  {/* ///// */}
                 </TabPanel>
                 <TabPanel>
-                  <ModalTable data={data} />
+                  <ModalTable data={data} addFood={addFood} collapse={food===""?false:true} />
+                  
+                  {/* details */}
+                  
+                  {/* ///// */}
                 </TabPanel>
                 <TabPanel>
-                  <ModalTable data={data} />
+                  <ModalTable data={data} addFood={addFood} collapse={food===""?false:true} />
+                  
+                  {/* details */}
+                  <Box  p="rem" display={food===""? 'none': 'block'}>
+              <HStack>
+               <Text w='90%' align={'center'} as='p'>  <IconButton
+          variant="ghost"
+          icon={<AiOutlineStar size={'20px'} />}
+        />{food} </Text>
+             <Button onClick={()=> setFood("")} rounded={true} >clear</Button>
+              </HStack>
+             Hello this is box for details 
+             <HStack spacing={20}>
+             <HStack>
+             <FoodChart datas={[7,25,78]} bgc={["yellow","red", "green"]} cal={89} size={'35'} sz={{base:"100px",md:"100px"}}/>
+             <VStack alignItems={'left'}>
+              <HStack><Bullet /> <Text>Protein: 14 g ( <Text as='span' color={'green'} >78 % </Text>) </Text> </HStack>
+              <HStack><Bullet /><Text> Net carbs: 5 g (<Text as='span' color={'red'} >15 % </Text>) </Text></HStack>
+              <HStack> <Bullet /><Text>Fat: 0.6 g  (<Text as='span' color={'black'} >7% </Text>)</Text> </HStack>
+             </VStack>
+             </HStack>
+             <HStack>
+              <VStack alignItems={'left'} spacing={10}>
+                <HStack spacing={10}> <Text>Time Of Day</Text> <Checkbox size={'lg'} /></HStack>
+                <HStack> <Text>Serving Size</Text> <Input type="number" htmlSize={2} width='auto' size='sm' value={1000} placeholder='1000 g' /> </HStack>
+              </VStack>
+             </HStack>
+             </HStack>
+             <Stack m={5} alignItems={'center'}>
+             <Button colorScheme={'green'} borderEndRadius={'2px'}>ADD TO DIARY</Button>
+             </Stack>
+            </Box>
+                  {/* ///// */}
                 </TabPanel>
                 <TabPanel>
-                  <ModalTable data={data} />
+                  <ModalTable data={data} addFood={addFood} collapse={food===""?false:true} />
+                  
+                  {/* details */}
+                  <Box  p="rem" display={food===""? 'none': 'block'}>
+              <HStack>
+               <Text w='90%' align={'center'} as='p'>  <IconButton
+          variant="ghost"
+          icon={<AiOutlineStar size={'20px'} />}
+        />{food} </Text>
+             <Button onClick={()=> setFood("")} rounded={true} >clear</Button>
+              </HStack>
+             Hello this is box for details 
+             <HStack spacing={20}>
+             <HStack>
+             <FoodChart datas={[7,25,78]} bgc={["yellow","red", "green"]} cal={89} size={'35'} sz={{base:"100px",md:"100px"}}/>
+             <VStack alignItems={'left'}>
+              <HStack><Bullet /> <Text>Protein: 14 g ( <Text as='span' color={'green'} >78 % </Text>) </Text> </HStack>
+              <HStack><Bullet /><Text> Net carbs: 5 g (<Text as='span' color={'red'} >15 % </Text>) </Text></HStack>
+              <HStack> <Bullet /><Text>Fat: 0.6 g  (<Text as='span' color={'black'} >7% </Text>)</Text> </HStack>
+             </VStack>
+             </HStack>
+             <HStack>
+              <VStack alignItems={'left'} spacing={10}>
+                <HStack spacing={10}> <Text>Time Of Day</Text> <Checkbox size={'lg'} /></HStack>
+                <HStack> <Text>Serving Size</Text> <Input type="number" htmlSize={2} width='auto' size='sm' value={1000} placeholder='1000 g' /> </HStack>
+              </VStack>
+             </HStack>
+             </HStack>
+             <Stack m={5} alignItems={'center'}>
+             <Button colorScheme={'green'} borderEndRadius={'2px'}>ADD TO DIARY</Button>
+             </Stack>
+            </Box>
+                  {/* ///// */}
                 </TabPanel>
                 <TabPanel>
-                  <ModalTable data={data} />
+                  <ModalTable data={data} addFood={addFood} collapse={food===""?false:true} />
+                  
+                  {/* details */}
+                  <Box  p="rem" display={food===""? 'none': 'block'}>
+              <HStack>
+               <Text w='90%' align={'center'} as='p'>  <IconButton
+          variant="ghost"
+          icon={<AiOutlineStar size={'20px'} />}
+        />{food} </Text>
+             <Button onClick={()=> setFood("")} rounded={true} >clear</Button>
+              </HStack>
+             Hello this is box for details 
+             <HStack spacing={20}>
+             <HStack>
+             <FoodChart datas={[7,25,78]} bgc={["yellow","red", "green"]} cal={89} size={'35'} sz={{base:"100px",md:"100px"}}/>
+             <VStack alignItems={'left'}>
+              <HStack><Bullet /> <Text>Protein: 14 g ( <Text as='span' color={'green'} >78 % </Text>) </Text> </HStack>
+              <HStack><Bullet /><Text> Net carbs: 5 g (<Text as='span' color={'red'} >15 % </Text>) </Text></HStack>
+              <HStack> <Bullet /><Text>Fat: 0.6 g  (<Text as='span' color={'black'} >7% </Text>)</Text> </HStack>
+             </VStack>
+             </HStack>
+             <HStack>
+              <VStack alignItems={'left'} spacing={10}>
+                <HStack spacing={10}> <Text>Time Of Day</Text> <Checkbox size={'lg'} /></HStack>
+                <HStack> <Text>Serving Size</Text> <Input type="number" htmlSize={2} width='auto' size='sm' value={1000} placeholder='1000 g' /> </HStack>
+              </VStack>
+             </HStack>
+             </HStack>
+             <Stack m={5} alignItems={'center'}>
+             <Button colorScheme={'green'} borderEndRadius={'2px'}>ADD TO DIARY</Button>
+             </Stack>
+            </Box>
+                  {/* ///// */}
                 </TabPanel>
               </TabPanels>
             </Tabs>
-            <Box h="30vh">
-             Hello this is box for details
-            </Box>
+            
           </ModalBody>
         </ModalContent>
       </Modal>
