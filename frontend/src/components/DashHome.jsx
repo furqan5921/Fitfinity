@@ -7,10 +7,6 @@ import {
   Progress,
   SimpleGrid,
   Stack,
-  Stat,
-  StatGroup,
-  StatLabel,
-  StatNumber,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
