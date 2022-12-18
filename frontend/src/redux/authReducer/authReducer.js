@@ -1,4 +1,4 @@
-import { FILLSIGNUP, LOGIN, SIGNUP, VERIFYOTP } from "./actionTypes"
+import { FILLSIGNUP, LOGIN, LOGOUT, SIGNUP, VERIFYOTP } from "./actionTypes"
 
 let initState = {
     token: localStorage.getItem('authToken'),
@@ -11,7 +11,8 @@ let initState = {
     successOtp: false,
     invalidEmail: false,
     wrongLoginCreds: false,
-    redirectOtp: false
+    redirectOtp: false,
+    email: localStorage.getItem('email')
 }
 
 export const authReducer = (state = initState, action) => {
@@ -31,12 +32,20 @@ export const authReducer = (state = initState, action) => {
             }
 
         case LOGIN:
-            if (action.payload !== 'wrong credentials' && action.payload !== 'verify otp')
+            if (action.payload !== 'wrong credentials' && action.payload !== 'verify otp') {
                 localStorage.setItem('authToken', action.payload.token)
+                localStorage.setItem('email', action.payload.email)
+            }
             return {
                 ...state, isAuth: action.payload.token ? true : false,
                 wrongLoginCreds: action.payload === 'wrong credentials' ? true : false,
                 redirectOtp: action.payload === 'verify otp' ? true : false
+            }
+        case LOGOUT:
+            localStorage.removeItem('email')
+            localStorage.removeItem('authToken')
+            return {
+                ...initState, isAuth: false
             }
 
         case FILLSIGNUP:

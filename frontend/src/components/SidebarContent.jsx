@@ -28,7 +28,7 @@ import {FaFacebook, FaInstagram, FaTwitter, FaYoutube} from 'react-icons/fa'
 import {ImFileZip} from 'react-icons/im';
 import {HiChartBar} from 'react-icons/hi'
 import { DashboardNav } from './DashboardNav';
-import logo from "../Assets/logo.jpeg";
+import logo from "../Assets/chotalogo.png";
 // import Google_Badge from "../Assets/Google_Badge.svg"
 // import App_store from "../Assets/App_store.svg"
 const LinkItems= [
@@ -71,7 +71,6 @@ export const SidebarContent = ({ onClose, ...rest }) => {
           {/* <CloseButton /> */}
           <IconButton
                     background="none"
-                    mt={5}
                     colorScheme='white'
                     _hover={{ background: 'none' }}
                     icon={<FiMenu size='22px' />}
@@ -91,7 +90,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
         overflowY={'scroll'}
         css={{
           '&::-webkit-scrollbar': {
-            width: '10px',
+            width: '7px',
           },
           '&::-webkit-scrollbar-track': {
             width: '10px',
@@ -99,7 +98,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
             color:"white"
           },
           '&::-webkit-scrollbar-thumb': {
-            background: 'black',
+            background: 'white',
             borderRadius: '10px',
           },
         }}>
