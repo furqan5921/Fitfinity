@@ -5,7 +5,7 @@ Chart.register(ArcElement, Tooltip, Legend)
 
 
 
-export default function Chart1({datas,bgc,sz}) {
+export default function Chart1({datas,bgc,sz,middata}) {
 
 
     return (
@@ -14,13 +14,14 @@ export default function Chart1({datas,bgc,sz}) {
                 labels: [],
                 datasets: [{
                     data: datas,
+                    cutout:40,
                     backgroundColor: bgc
                 }],
                 borderWidth: 1,
                 }}                
             />
-            <Flex position="absolute" top="5px" zIndex="1" w="100%" h="100%" alignItems="center" justifyContent="center" flexDirection="column" fontSize="12px">
-            <Text>1000</Text>
+            <Flex position="absolute" top="5px" zIndex="1" w="100%" h="100%" alignItems="center" justifyContent="center" flexDirection="column" fontSize="18px" as="b">
+            <Text>{middata}</Text>
             <Text>kcal</Text>
             </Flex>
         </Box>
