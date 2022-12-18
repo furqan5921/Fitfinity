@@ -11,7 +11,7 @@ const nutriSchema = new Schema({
         type:String,
         required:true
     },
-    protin:{
+    protein:{
         type:String,
         required:true
     },
