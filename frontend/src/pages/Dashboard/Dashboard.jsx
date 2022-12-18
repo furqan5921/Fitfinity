@@ -9,7 +9,7 @@ import Plans from '../Plans/Plans'
 function Dashboard() {
   return (
     <>
-      <SidebarContent/>
+      <SidebarContent display={{base:"none",md:"block"}}/>
       <DashHome />
 
     </>
