@@ -18,9 +18,13 @@ const Allroutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+
+      
+
       <Route path="/dashboard" element={<PrivateRoutes> <Dashboard /> </PrivateRoutes>} />
       <Route path="/dairy" element={<PrivateRoutes><Dairy /></PrivateRoutes>} />
       <Route path='/plans' element={<PrivateRoutes><Plans /></PrivateRoutes>} />
+
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/otp" element={<Otp />} />
