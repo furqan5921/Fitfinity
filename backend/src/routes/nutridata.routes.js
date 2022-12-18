@@ -6,8 +6,12 @@ const jwt = require('jsonwebtoken')
 const app = express.Router()
 
 app.get("/", async(req, res) => {
-    let data = await Nutridata.find({})
-    res.send(data)
+    try{
+        let data = await Nutridata.find({})
+        res.status(200).send(data)
+    }catch(e){
+        res.status(404).send("e.message")
+    }
 })
 
 app.get("/filter/:fl", async(req, res) => {
