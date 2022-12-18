@@ -20,7 +20,7 @@ function DashHome() {
       <ListStack    w={"85%"}     m={10}
         boxShadow={"lg"}
          title="Quick Add to Diary"/>
-      <Flex gap={{base:10,md:20}} m={{base:5,md:10,lg:20}} flexWrap='wrap' justifyContent="center" alignItems={"center"}>
+      <Flex gap={{base:10,md:10}} m={{base:5,md:10,lg:20}} flexWrap={{base:'wrap',md:'nowrap'}} justifyContent="center" alignItems={"center"}>
         <Box
           bgColor="white"
           textAlign={"center"}
