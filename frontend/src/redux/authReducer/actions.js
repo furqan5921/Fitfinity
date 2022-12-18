@@ -3,7 +3,7 @@ import { FILLSIGNUP, LOGIN, SIGNUP, VERIFYOTP } from './actionTypes';
 
 
 export const signup = (details) => async (dispatch) => {
-    let res = await axios.post('http://localhost:8080/users/signup', details)
+    let res = await axios.post('https://fitfinitybackend.onrender.com/users/signup', details)
     if (res.data.message === 'otp updated' || res.data.message === 'OTP Sent')
         dispatch({ type: SIGNUP, payload: true })
     else if (res.data === 'user already exists')
@@ -11,7 +11,7 @@ export const signup = (details) => async (dispatch) => {
 }
 
 export const verifyOtp = (details) => async (dispatch) => {
-    let res = await axios.post('http://localhost:8080/users/otp', details)
+    let res = await axios.post('https://fitfinitybackend.onrender.com/users/otp', details)
     if (res.data.message === 'signup successful')
         dispatch({ type: VERIFYOTP, payload: true })
     else if (res.data.message === 'wrong otp')
@@ -21,7 +21,7 @@ export const verifyOtp = (details) => async (dispatch) => {
 }
 
 export const login = (details) => async (dispatch) => {
-    let res = await axios.post('http://localhost:8080/users/login', details)
+    let res = await axios.post('https://fitfinitybackend.onrender.com/users/login', details)
     if (res.data.message === 'login successful')
         dispatch({ type: LOGIN, payload: { token: res.data.token, email: res.data.email } })
     else if (res.data.message === 'wrong credentials')
