@@ -122,7 +122,7 @@ app.post('/login', async (req, res) => {
 
         if (existingUser.otpVerified) {
             let token = jwt.sign({ email: existingUser.email, role: existingUser.role, }, process.env.TOKEN, { expiresIn: '7d' })
-            return res.status(200).send({ message: 'login successful', token })
+            return res.status(200).send({ message: 'login successful', token, email })
         } else {
             return res.send({ message: 'verify otp' })
         }

@@ -23,7 +23,7 @@ export const verifyOtp = (details) => async (dispatch) => {
 export const login = (details) => async (dispatch) => {
     let res = await axios.post('http://localhost:8080/users/login', details)
     if (res.data.message === 'login successful')
-        dispatch({ type: LOGIN, payload: { token: res.data.token } })
+        dispatch({ type: LOGIN, payload: { token: res.data.token, email: res.data.email } })
     else if (res.data.message === 'wrong credentials')
         dispatch({ type: LOGIN, payload: 'wrong credentials' })
     else if (res.data.message === 'verify otp')
