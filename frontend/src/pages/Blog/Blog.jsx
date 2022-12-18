@@ -7,7 +7,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  HStack,
   Image,
   Input,
   InputGroup,
