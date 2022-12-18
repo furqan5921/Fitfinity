@@ -2,120 +2,40 @@ import {
   Box,
   Button,
   Flex,
-  Heading,
-  HStack,
   Progress,
+  Heading,
   SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { useState } from "react";
-import { BiometricModal } from "./DashBoard/BiometricModal";
-import DashList from "./DashBoard/DashList";
-import { ExerciseModal } from "./DashBoard/ExerciseModal";
-import { FoodModal } from "./DashBoard/FoodModal";
-import { NotesModal } from "./DashBoard/NotesModal";
+import ListStack from "./DashBoard/ListStack";
 import { MobileNav } from "./Siderbar";
-
+// Quick Add to Diary
 function DashHome() {
-  const [isFoodModalVisible, setIsFoodModalVisible] = useState(false);
-  const [isExerciseModalVisible, setIsExerciseModalVisible] = useState(false);
-  const [isBiometricModalVisible, setIsBiometricModalVisible] = useState(false);
-  const [isNotesModalVisible, setIsNotesModalVisible] = useState(false);
-
-  const FoodModalClick = () => {
-    setIsFoodModalVisible(true);
-    // onClose();
-  };
-  const ExerciseModalClick = () => {
-    setIsExerciseModalVisible(true);
-    // onClose();
-  };
-
-  const BioModalClick = () => {
-    setIsBiometricModalVisible(true);
-  };
   return (
     <Box w={["100%", "100%", "80%"]} float={"right"} h={"50rem"}>
       <MobileNav />
-      <Heading>Your Dashboard</Heading>
-
-      <HStack
-        spacing={20}
-        m={10}
-        p={3}
-        w={"85%"}
-        flexWrap="wrap"
-        borderRadius="1rem"
+      <Heading fontSize={{base:'15px',md:'18px',lg:'22px'}}>Your Dashboard</Heading>
+      <ListStack    w={"85%"}     m={10}
         boxShadow={"lg"}
-        bgColor="white"
-      >
-        <Heading fontSize={"25px"}> Quick Add to Diary</Heading>
-        <DashList
-          src="https://cdn1.cronometer.com/brand/svg/add-food-icon.svg"
-          title="Food"
-          onClick={FoodModalClick}
-        />
-        {isFoodModalVisible && (
-          <FoodModal
-            isModalVisible={isFoodModalVisible}
-            setIsModalVisible={setIsFoodModalVisible}
-          />
-        )}
-        <DashList
-          src="https://cdn1.cronometer.com/brand/svg/add-exercise-icon.svg"
-          title="Exercise"
-          onClick={ExerciseModalClick}
-        />
-        {isExerciseModalVisible && (
-          <ExerciseModal
-            isModalVisible={isExerciseModalVisible}
-            setIsModalVisible={setIsExerciseModalVisible}
-          />
-        )}
-
-        <DashList
-          src="https://cdn1.cronometer.com/brand/svg/add-biometric-icon.svg"
-          title="Biometric"
-          onClick={BioModalClick}
-        />
-        {isBiometricModalVisible && (
-          <BiometricModal
-            isModalVisible={isBiometricModalVisible}
-            setIsModalVisible={setIsBiometricModalVisible}
-          />
-        )}
-
-        <DashList
-          src="https://cdn1.cronometer.com/brand/svg/add-note-icon.svg"
-          title="Notes"
-          onClick={() => {
-            setIsNotesModalVisible(true);
-          }}
-        />
-        {isNotesModalVisible && (
-          <NotesModal
-            isModalVisible={isNotesModalVisible}
-            setIsModalVisible={setIsNotesModalVisible}
-          />
-        )}
-      </HStack>
-      <Flex gap={20} m={20} justifyContent="center" alignItems={"center"}>
+         title="Quick Add to Diary"/>
+      <Flex gap={{base:10,md:20}} m={{base:5,md:10,lg:20}} flexWrap='wrap' justifyContent="center" alignItems={"center"}>
         <Box
           bgColor="white"
           textAlign={"center"}
           p={"2rem"}
           pt="10rem"
           h={"30rem"}
-          w="50%"
+          fontSize={{base:'10px',md:'15px',lg:'18px'}}
+          w={{md:'80%',lg:"50%"}}
         >
           <Box h='40%'>
 
           </Box>
           <Heading>Cronometer <Text as='span' color='#FFD700' >Gold</Text></Heading>
           <Text>Get Gold for an ad-free experience.</Text>
-          <Button colorScheme="teal" size="lg">
+          <Button colorScheme="teal" size={{base:'sm',md:'md',lg:"lg"}}>
             {" "}
             SEE ALL FEATURES
           </Button>
@@ -156,11 +76,11 @@ function DashHome() {
             m={2}
             textAlign="center"
             textColor='grey'
-            fontSize={'18px'}
+            fontSize={{base:'10px',md:'15px',lg:'18px'}}
             borderRadius={"1rem"}
           >
-            <Text as='b' m={10} fontSize={'18px'}> Fasting Stats</Text>
-            <SimpleGrid columns={[1, null, 2]} m='auto' w='90%' spacing="10px"   textAlign={'left'} fontSize={'18px'}>
+            <Text as='b' m={{base:5,md:10}} fontSize={{base:'10px',md:'15px',lg:'18px'}}> Fasting Stats</Text>
+            <SimpleGrid columns={[1, null, 2]} m='auto' w='90%' spacing={{base:'5px',md:"10px"}}   textAlign={'left'} fontSize={{base:'10px',md:'15px',lg:'18px'}}>
               <Box bg="white" height="10%">
                 <Text as="p">Completed Fasts :</Text>
                 <Text as="p"> 0 </Text>

@@ -18,7 +18,7 @@ import { useState } from "react";
     let [value, setValue] = useState('')
     let [count,setCount]= useState(0)
     let handleInputChange = (e) => {
-  if(count<100){
+  if(count<250){
       let inputValue = e.target.value
       setValue(inputValue)
       setCount(value.length)
@@ -40,6 +40,8 @@ import { useState } from "react";
             <ModalBody w={"100%"} fontSize='md' >
             <Textarea border={'1px solid'}
             borderRadius='1rem'
+            fontSize='20px'
+            value={value}
             height={'12rem'}
             focusBorderColor='black'
              onChange={handleInputChange}
@@ -47,7 +49,7 @@ import { useState } from "react";
         size='sm'
         
       />
-       <Text>{count}/100</Text>
+       <Text>{count}/250</Text>
        <Stack direction={'row'} justifyContent='space-between' p={10} bgColor='blue.50' >
          <Box >Timestamp <Checkbox colorScheme='teal'  />  </Box>
          <Box >Diary Group <Checkbox colorScheme='teal'  /> </Box>

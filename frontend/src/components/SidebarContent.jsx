@@ -255,7 +255,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
                       isRound={true}
                       p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaTwitter size={{base:'15px',md:"18px",lg:"22px"}} />}
+                      icon={<FaTwitter/>}
                     />
                     <IconButton
                       aria-label="github"
@@ -268,7 +268,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
                       isRound={true}
                       p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaFacebook size={{base:'15px',md:"18px",lg:"22px"}} />}
+                      icon={<FaFacebook  />}
                     />
                     <IconButton
                       aria-label="discord"
@@ -280,7 +280,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
                       isRound={true}
                       p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaInstagram size={{base:'15px',md:"18px",lg:"22px"}} />}
+                      icon={<FaInstagram  />}
                     />
                     <IconButton
                       aria-label="discord"
@@ -292,7 +292,7 @@ export const SidebarContent = ({ onClose, ...rest }) => {
                       isRound={true}
                       p={2}
                       _hover={{ bg: 'white' }}
-                      icon={<FaYoutube size={{base:'15px',md:"18px",lg:"20px"}} />}
+                      icon={<FaYoutube  />}
                     />
                   </HStack>
                   </Box>

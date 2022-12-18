@@ -77,13 +77,13 @@ import {
           <ModalContent>
             <ModalHeader>Add Biometric</ModalHeader>
             <ModalCloseButton />
-            <ModalBody w={"100%"} fontSize='md' >
-              <Tabs size='lg'>
-                <TabList>
+            <ModalBody w={"100%"} fontSize={{base:'sm',md:"md"}} >
+              <Tabs size={{base:'sm',md:"md"}}>
+                <TabList display='flex' flexWrap='wrap'>
                   {/* <Tab _selected={{ color: 'teal.500', borderBottomColor:'red' }}  >Search</Tab> */}
                   <Tab _selected={{ color: 'teal.500', borderBottomColor:'red'  }}  >Most Recent</Tab>
                   <Tab _selected={{ color: 'teal.500', borderBottomColor:'red' }}  >Browse All</Tab>
-                </TabList>
+                </TabList >
   
                 <TabPanels>
                   <TabPanel>
