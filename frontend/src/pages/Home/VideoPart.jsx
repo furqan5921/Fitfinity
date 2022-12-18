@@ -14,9 +14,7 @@ import { useSelector } from "react-redux";
 const VideoPart = () => {
   const { isAuth } = useSelector((s) => s.auth);
   const navigate = useNavigate();
-  if (isAuth) {
-    navigate("/dashboard");
-  }
+  
   useEffect(()=>{
     if (isAuth) {
       navigate("/dashboard");
