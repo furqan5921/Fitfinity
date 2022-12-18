@@ -10,43 +10,51 @@ import Submenu from "./charts/submenu";
 import { SidebarContent } from "../../components/SidebarContent";
 import { MobileNav } from "../../components/Siderbar";
 import { getdata } from "../../redux/datareducer/action";
-import DashList from "../../components/DashBoard/DashList";
-import { FoodModal } from "../../components/DashBoard/FoodModal";
-import { ExerciseModal } from "../../components/DashBoard/ExerciseModal";
-import { BiometricModal } from "../../components/DashBoard/BiometricModal";
-import { NotesModal } from "../../components/DashBoard/NotesModal";
+import ListStack from "../../components/DashBoard/ListStack";
+import { getuserdata, deleteuserdata } from "../../redux/userdatareducer/action";
+import {AiFillDelete} from "react-icons/ai"
+import {SlCalender} from "react-icons/sl"
 
 export default function Dairy() {
     const dispatch = useDispatch();
     let [model, setmodel] = useState(false)
     const { loading, datas } = useSelector(el => el.data)
+    const {userdata,totalprotein,totalcarbs,totalfat,totalcunsumed} =useSelector(e=>e.userdata)
+    const [total, settotal] = useState({
+        totalcunsumed:0,
+        totalprotein:0,
+        totalcarbs:0,
+        totalfat:0
+    })
 
+    useEffect(()=>{
+        dispatch(getdata())
+        dispatch(getuserdata())
+        
+    },[])
     // useEffect(()=>{
-    //     dispatch(getdata())
+    //     calculatedata()
     // },[])
+    console.log(totalprotein,totalcarbs,totalfat,totalcunsumed)
+    function calculatedata(){
+        let totalcunsumed=userdata.length!=0?userdata.reduce((a,b)=>(Number(a.energy)+Number(b.energy))):0
+        let totalprotein=userdata.length!=0?userdata.reduce((a,b)=>{
+            return (a.protein.split("-")[0]+b.protein.split("-")[0])
+        }):1
+        let totalcarbs=userdata.length!=0?userdata.reduce((a,b)=>{
+            return (a.carbs.split("-")[0]+b.carbs.split("-")[0])
+        }):0
+        let totalfat=userdata.length!=0?userdata.reduce((a,b)=>{
+            return (a.fat.split("-")[0]+b.fat.split("-")[0])
+        }):0
+        settotal({totalcunsumed,totalprotein,totalcarbs,totalfat})
+    }
 
-    // console.log(datas,loading)
-    // if (loading==true) {
-    //     return <h1>Loading...</h1>
-    // }
+    console.log(datas,loading,userdata)
+    if (loading==true) {
+        return <h1>Loading...</h1>
+    }
 
-    const [isFoodModalVisible, setIsFoodModalVisible] = useState(false);
-  const [isExerciseModalVisible, setIsExerciseModalVisible] = useState(false);
-  const [isBiometricModalVisible, setIsBiometricModalVisible] = useState(false);
-  const [isNotesModalVisible, setIsNotesModalVisible] = useState(false);
-
-  const FoodModalClick = () => {
-    setIsFoodModalVisible(true);
-    // onClose();
-  };
-  const ExerciseModalClick = () => {
-    setIsExerciseModalVisible(true);
-    // onClose();
-  };
-
-  const BioModalClick = () => {
-    setIsBiometricModalVisible(true);
-  };
 
     return (
         <Box w="100vw">
@@ -57,7 +65,7 @@ export default function Dairy() {
                 <Flex bgColor="white" boxShadow='md' borderRadius="15px" w={{base:"100%", md:"100%",lg:"50%"}} p="10px" fontSize="22px" alignItems="center" justifyContent="space-between">
                     <Flex alignItems="center">
                         <BsChevronLeft/>
-                        <Box w="30px" h="30px" border="1px solid"></Box>
+                        <SlCalender/>
                         <Text as="b" fontSize="18px">Today</Text>
                         <BsChevronRight/>
                     </Flex>
@@ -74,25 +82,7 @@ export default function Dairy() {
                 </Flex>
             </Flex>
             <Box w="100%" margin="auto" marginTop="30px" bgColor="white" boxShadow='md' borderRadius="15px" p="15px">
-                {/* <Flex gap="10px">
-                    <Button backgroundColor="white" fontSize={{base:"12px",md:"16px"}}>
-                        <Image h={{base:"16px",md:"20px"}} src="https://cdn1.cronometer.com/brand/svg/add-food-icon.svg"/>
-                        FOOD
-                    </Button>
-                    <Button backgroundColor="white" fontSize={{base:"12px",md:"16px"}}>
-                        <Image h={{base:"16px",md:"20px"}} src="https://cdn1.cronometer.com/brand/svg/add-exercise-icon.svg"/>
-                        EXERCISE
-                    </Button>
-                    <Button backgroundColor="white" fontSize={{base:"12px",md:"16px"}}>
-                        <Image h={{base:"16px",md:"20px"}} src="https://cdn1.cronometer.com/brand/svg/add-biometric-icon.svg"/>
-                        BIOMETRIC
-                    </Button>
-                    <Button backgroundColor="white" fontSize={{base:"12px",md:"16px"}}>
-                        <Image h={{base:"16px",md:"20px"}} src="https://cdn1.cronometer.com/brand/svg/add-note-icon.svg"/>
-                        NOTE
-                    </Button>
-                </Flex> */}
-                 <HStack
+                 {/* <HStack
                     spacing={20}
                     p={3}
                     flexWrap="wrap"
@@ -147,9 +137,22 @@ export default function Dairy() {
                         setIsModalVisible={setIsNotesModalVisible}
                     />
                     )}
-                </HStack>
+                </HStack> */}
+                <ListStack/>
                 <Box mt="10px" w="100%" h="200px" p="15px" borderRadius="15px" border="1px solid #ccc">
-                    <Text as="b">Add food, exercise, biometrics or notes to see them in your dairy.</Text>
+                    <Text as="b" display={userdata.length===0?"block":"none"}>Add food, exercise, biometrics or notes to see them in your dairy.</Text>
+                    <Flex w="100%" flexDirection="column">
+                        {
+                            userdata?.map((el,i)=>(
+                                <Flex justifyContent="space-between" key={i} backgroundColor={i%2==0?"gray.200":"white"} p="5px" borderRadius="10px">
+                                    <Text w="500px" as="b">{el.name}</Text>
+                                    <Text>{el.ss}g</Text>
+                                    <Text>{el.energy}kcal</Text>
+                                    <AiFillDelete onClick={()=>dispatch(deleteuserdata(el._id))}/>
+                                </Flex>
+                            ))
+                        }
+                    </Flex>
                 </Box>
             </Box>
             <Flex margin="auto" marginTop="30px" gap={{base:"10px",md:"30px",lg:"30px"}} flexDirection={{base:"column", md:"column",lg:"row"}}>
@@ -157,15 +160,15 @@ export default function Dairy() {
                     <Text fontSize="20px" fontWeight="700">Energy Summary</Text>
                     <Flex justifyContent="center" gap={{base:"0",md:"10px"}}>
                         <Flex flexDirection="column" alignItems="center">
-                            <Chart1 datas={[40,60]} bgc={["grey", "yellow"]} sz={{base:"90px",md:"100px"}}/>
+                            <Chart1 datas={[totalprotein,totalcarbs,totalfat]} bgc={["rgb(68,208,123)", "rgb(28,202,215)","rgb(234,59,4)"]} sz={{base:"90px",md:"130px"}} middata={totalcunsumed}/>
                             <Text>Consumed</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <Chart1 datas={[10,90]} bgc={["grey", "yellow"]} sz={{base:"90px",md:"100px"}}/>
+                            <Chart1 datas={[1779,356]} bgc={["rgb(174,97,194)", "rgb(50,142,142)"]} sz={{base:"90px",md:"130px"}} middata={2135}/>
                             <Text>Burned</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <Chart1 datas={[70,30]} bgc={["grey", "yellow"]} sz={{base:"90px",md:"100px"}}/>
+                            <Chart1 datas={[2135,totalcunsumed]} bgc={["rgb(230,232,240)", "rgb(157,160,173)"]} sz={{base:"90px",md:"130px"}} middata={2135-totalcunsumed}/>
                             <Text>Remaining</Text>
                         </Flex>
                     </Flex>
@@ -175,15 +178,15 @@ export default function Dairy() {
                     <Flex marginTop="10px">
                         <Flex flexDirection="column" as="b">
                             <Text>Energy</Text>
-                            <Text>Protin</Text>
+                            <Text>Protein</Text>
                             <Text>Cet Carbs</Text>
                             <Text>Fat</Text>
                         </Flex>
                         <Flex w="50%" mt="5px" flexDirection="column" justifyContent="space-between" marginLeft="20px">
-                                <Bar1 barval={20} barpercent={"ssfd"} clr={"gray"} spl={0}/>
-                                <Bar1 barval={50} barpercent={"ssfd"} clr={"green"} spl={0}/>
-                                <Bar1 barval={10} barpercent={"ssfd"} clr={"blue"} spl={0}/>
-                                <Bar1 barval={80} barpercent={"ssfd"} clr={"red"} spl={0}/>
+                                <Bar1 barval={Math.floor((totalcunsumed/2135)*100)} barpercent={`${totalcunsumed} kcal / 2135 kcal ${Math.floor((totalcunsumed/2135)*100)}%`} clr={"gray"} spl={0}/>
+                                <Bar1 barval={Math.floor((totalprotein/133)*100)} barpercent={`${totalprotein} g / 133.4 g ${Math.floor((totalprotein/133)*100)}%`} clr={"green"} spl={0}/>
+                                <Bar1 barval={Math.floor((totalcarbs/240)*100)} barpercent={`${totalcarbs} g / 240.2 g ${Math.floor((totalcarbs/240)*100)}%`} clr={"blue"} spl={0}/>
+                                <Bar1 barval={Math.floor((totalfat/71)*100)} barpercent={`${totalfat} g / 71.2 g ${Math.floor((totalcarbs/71)*100)}%`} clr={"red"} spl={0}/>
                         </Flex>
                     </Flex>
                 </Box>
@@ -219,26 +222,26 @@ export default function Dairy() {
                             <Text fontSize="14px">Fiber</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={22} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>22%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Iron</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={11} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>11%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Calcium</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={26} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>26%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Vit.A</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={51} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>51%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Vit.C</Text>
                         </Flex>
@@ -249,14 +252,14 @@ export default function Dairy() {
                             <Text fontSize="14px">Vit.B12</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={36} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>36%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Folate</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={6} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>6%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Potassium</Text>
                         </Flex>
@@ -267,25 +270,25 @@ export default function Dairy() {
                         <Box w="100%" border="1px solid #ccc" borderRadius="15px" h="fit-content">
                             <Text bgColor="#ccc" borderRadius="15px 15px 0px 0px" padding="5px 15px">General</Text>
                             <Box padding="0px 15px">
-                                <Submenu data={["Energy","Alcohol","Caffiene","Water"]} flag={2} para={"g"}/>
+                                <Submenu data={["Energy","Alcohol","Caffiene","Water"]} flag={userdata.length} para={"g"}/>
                             </Box>
                         </Box>
                         <Box w="100%" border="1px solid #ccc" borderRadius="15px" h="fit-content">
                             <Text bgColor="#ccc" borderRadius="15px 15px 0px 0px" padding="5px 15px">Carbohydrates</Text>
                             <Box padding="0px 15px">
-                                <Submenu data={["Carbs","Fiber","Starch","Sugars","Net Carbs"]} flag={2} para={"g"}/>
+                                <Submenu data={["Carbs","Fiber","Starch","Sugars","Net Carbs"]} flag={userdata.length} para={"g"}/>
                             </Box>
                         </Box>
                         <Box w="100%" border="1px solid #ccc" borderRadius="15px" h="fit-content">
                             <Text bgColor="#ccc" borderRadius="15px 15px 0px 0px" padding="5px 15px">Lipids</Text>
                             <Box padding="0px 15px">
-                                <Submenu data={["Fat","Monounsaturated","Polyunsaturated","Omega-3","Omega-6","Saturated","Trans-Fats","Cholesterol"]} flag={2} para={"g"}/>
+                                <Submenu data={["Fat","Monounsaturated","Polyunsaturated","Omega-3","Omega-6","Saturated","Trans-Fats","Cholesterol"]} flag={userdata.length} para={"g"}/>
                             </Box>
                         </Box>
                         <Box w="100%" border="1px solid #ccc" borderRadius="15px" h="fit-content">
                             <Text bgColor="#ccc" borderRadius="15px 15px 0px 0px" padding="5px 15px">Protein</Text>
                             <Box padding="0px 15px">
-                                <Submenu data={["Protein","Cystine","Histedine","Isoleucine","Leucine","Lysine","Methionine","Phenylalanine","Threonine","Tryptophan","Tyrosine","Valine"]} flag={2} para={"g"}/>
+                                <Submenu data={["Protein","Cystine","Histedine","Isoleucine","Leucine","Lysine","Methionine","Phenylalanine","Threonine","Tryptophan","Tyrosine","Valine"]} flag={userdata.length} para={"g"}/>
                             </Box>
                         </Box>
                     </Flex>
@@ -293,13 +296,13 @@ export default function Dairy() {
                         <Box w="100%" border="1px solid #ccc" borderRadius="15px" h="fit-content">
                             <Text bgColor="#ccc" borderRadius="15px 15px 0px 0px" padding="5px 15px">Vitamins</Text>
                             <Box padding="0px 15px">
-                                <Submenu data={["B1 (Thiamine)","B2 (Riboflavin)","B3 (Niacin)","B5 (Pantothenic)","B6 (Pyridoxine)", "B12 (Cobalamin)", "Folate", "Vitamin A", "Vitamin C", "Vitamin C", "Vitamin E", "Vitamin K"]} flag={0} para={"mg"}/>
+                                <Submenu data={["B1 (Thiamine)","B2 (Riboflavin)","B3 (Niacin)","B5 (Pantothenic)","B6 (Pyridoxine)", "B12 (Cobalamin)", "Folate", "Vitamin A", "Vitamin C", "Vitamin C", "Vitamin E", "Vitamin K"]} flag={userdata.length} para={"mg"}/>
                             </Box>
                         </Box>
                         <Box w="100%" border="1px solid #ccc" borderRadius="15px" h="fit-content">
                             <Text bgColor="#ccc" borderRadius="15px 15px 0px 0px" padding="5px 15px">Minerals</Text>
                             <Box padding="0px 15px">
-                                <Submenu data={["Calcium","Copper","Iron","Magnesium","Manganese", "Phosphorus", "Potassium", "Selenium", "Sodium", "Zinc"]} flag={1} para={"mg"}/>
+                                <Submenu data={["Calcium","Copper","Iron","Magnesium","Manganese", "Phosphorus", "Potassium", "Selenium", "Sodium", "Zinc"]} flag={userdata.length} para={"mg"}/>
                             </Box>
                         </Box>
                     </Flex>

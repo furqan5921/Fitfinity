@@ -10,7 +10,9 @@ import {
 from '@chakra-ui/react'
 // reference for pass data from child to parent
 // https://www.freecodecamp.org/news/pass-data-between-components-in-react/ 
-export default function ModalTable({data,collapse,addFood}){
+export default function ModalTable({data,collapse,addFood, flag}){
+
+  // console.log(data)
     return <TableContainer height={collapse?'20vh':'50vh'} overflowY={'scroll'}   css={{
      '&::-webkit-scrollbar': {
        width: '12px',
@@ -34,11 +36,16 @@ export default function ModalTable({data,collapse,addFood}){
        </Thead>
        <Tbody>
          {
-             data.map((el,i)=>
-             <Tr key={el.desc+i}>
-                 <Td onClick={()=>addFood(el.desc)}>{el.desc}</Td>
-                 <Td>{el.source}</Td>
-             </Tr>)
+             data.map((el)=>
+             (
+              flag!==""?(flag==el.filter?<Tr key={el._id}>
+              <Td onClick={()=>addFood(el)}>{el.name}</Td>
+              <Td>NCCDB</Td>
+          </Tr>:null):<Tr key={el._id}>
+              <Td onClick={()=>addFood(el)}>{el.name}</Td>
+              <Td>NCCDB</Td>
+          </Tr>
+             ))
          }
        </Tbody>
      </Table>
