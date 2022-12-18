@@ -2,7 +2,7 @@
 # Cronometer Clone [FitFinity]
 
 
-* [Click Here](https:www.google.com") to view the deployed website.
+* [Click Here](https://fitfinity.vercel.app/") to view the deployed website.
  <p align="center"><img  width="200" src="https://i.imgur.com/MNHIt59.jpeg"/img> </p>
 <p>
 This was a collaborative construct week project at Masai School.
@@ -18,7 +18,7 @@ ___
         <li> <a href="https://github.com/subhankarroy612">Subhankar Roy (Team Member)</a> </li>
         <li><a href="https://github.com/JYOTIPM1999">Jyoti Prakash Mohapatra (Team Member)</a></li>
         <li><a href="https://github.com/soumitra-dey">Soumitra Dey (Team Member)</a></li>
-        <li><a href="https://github.com/H-unique245">Hemant Aher (Team Lead)</a></li>
+        <li><a href="https://github.com/H-unique245">Hemant Aher (Team Member)</a></li>
   </ul>
   
 
