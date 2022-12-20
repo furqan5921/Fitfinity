@@ -25,6 +25,8 @@ const VideoPart = () => {
     <Box
       w="100%"
       bgImage={"https://cdn1.cronometer.com/webflow/dot-pattern.svg"}
+      backgroundSize={"cover"}
+      backgroundRepeat={"no-repeat"}
     >
       <Flex
         gap={10}
