@@ -8,11 +8,53 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getdata } from "../redux/datareducer/action";
+import { getuserdata } from "../redux/userdatareducer/action";
 import ListStack from "./DashBoard/ListStack";
 import { MobileNav } from "./Siderbar";
 // Quick Add to Diary
 function DashHome() {
+  const dispatch = useDispatch();
+  let [model, setmodel] = useState(false)
+  const { loading, datas } = useSelector(el => el.data)
+  const {userdata,totalprotein,totalcarbs,totalfat,totalcunsumed} =useSelector(e=>e.userdata)
+  const [total, settotal] = useState({
+      totalcunsumed:0,
+      totalprotein:0,
+      totalcarbs:0,
+      totalfat:0
+  })
+
+  useEffect(()=>{
+      dispatch(getdata())
+      dispatch(getuserdata())
+      
+  },[])
+  // useEffect(()=>{
+  //     calculatedata()
+  // },[])
+  console.log(totalprotein,totalcarbs,totalfat,totalcunsumed)
+  function calculatedata(){
+      let totalcunsumed=userdata.length!=0?userdata.reduce((a,b)=>(Number(a.energy)+Number(b.energy))):0
+      let totalprotein=userdata.length!=0?userdata.reduce((a,b)=>{
+          return (a.protein.split("-")[0]+b.protein.split("-")[0])
+      }):1
+      let totalcarbs=userdata.length!=0?userdata.reduce((a,b)=>{
+          return (a.carbs.split("-")[0]+b.carbs.split("-")[0])
+      }):0
+      let totalfat=userdata.length!=0?userdata.reduce((a,b)=>{
+          return (a.fat.split("-")[0]+b.fat.split("-")[0])
+      }):0
+      settotal({totalcunsumed,totalprotein,totalcarbs,totalfat})
+  }
+
+  console.log(datas,loading,userdata)
+  if (loading==true) {
+      return <h1>Loading...</h1>
+  }
+
   return (
     <Box w={["100%", "100%", "80%"]} float={"right"} h={"50rem"}>
       <MobileNav />
