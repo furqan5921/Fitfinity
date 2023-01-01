@@ -197,8 +197,8 @@ export default function Dairy() {
                     <Text fontSize="18px" fontWeight="600">Nutrition Scores</Text>
                     <Flex gap="20px">
                         <Flex flexDirection="column" alignItems="center">
-                        <CircularProgress value={40} color='pink.600' size='90px' thickness='6px'>
-                            <CircularProgressLabel>40%</CircularProgressLabel>
+                        <CircularProgress value={Math.floor((totalcunsumed/2135)*100)} color='pink.600' size='90px' thickness='6px'>
+                            <CircularProgressLabel>{Math.floor((totalcunsumed/2135)*100)}%</CircularProgressLabel>
                         </CircularProgress>
                             <Text fontSize="14px">All Targets</Text>
                         </Flex>
@@ -216,50 +216,50 @@ export default function Dairy() {
                     <Text fontSize="18px" fontWeight="600">Highlighted Nutrients</Text>
                     <Grid templateColumns={{base:"repeat(3,1fr)", md:"repeat(4,1fr)",lg:"repeat(8,1fr)"}} w={{base:"100%",md:"90%",lg:"100%"}}>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*3.5} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{userdata.length*3.5}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Fiber</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={22} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>22%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*5} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{userdata.length*5}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Iron</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={11} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>11%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*2} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{userdata.length*2}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Calcium</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={26} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>26%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*11} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{userdata.length*11}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Vit.A</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={51} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>51%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*17} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{userdata.length*17}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Vit.C</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={40} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>40%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*2.6} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{(userdata.length*2.6).toFixed(2)}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Vit.B12</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={36} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>36%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*1.8} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{(userdata.length*1.8).toFixed(2)}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Folate</Text>
                         </Flex>
                         <Flex flexDirection="column" alignItems="center">
-                            <CircularProgress value={6} color='yellow.400' size='90px' thickness='6px'>
-                                <CircularProgressLabel>6%</CircularProgressLabel>
+                            <CircularProgress value={userdata.length*2.3} color='yellow.400' size='90px' thickness='6px'>
+                                <CircularProgressLabel>{(userdata.length*2.3).toFixed(2)}%</CircularProgressLabel>
                             </CircularProgress>
                             <Text fontSize="14px">Potassium</Text>
                         </Flex>
