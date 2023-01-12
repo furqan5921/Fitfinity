@@ -54,41 +54,41 @@ ___
  ## Glipms of project
 __
 
-   - ###Homepage 
+   - ### Homepage 
 <img src="https://i.imgur.com/J4NKqlh.png" alt="homepage" />
 
 
-   - ###Support 
+   - ### Support 
 <img src="https://i.imgur.com/sOCVm6Q.png" alt="suport" />
 
 
 
-   - ###Blogs 
+   - ### Blogs 
 <img src="https://i.imgur.com/S9vddUS.png" alt="blogs" />
 
 
-   - ###Login 
+   - ### Login 
 <img src="https://i.imgur.com/iSm1buH.png" alt="login" />
 
 
 
-   - ###Sign up 
+   - ### Sign up 
 <img src="https://i.imgur.com/1imxoHn.png" alt="singup1" />
 <img src="https://i.imgur.com/L60YTQH.png" alt="singup2" />
 
 
 
-   - ###Dashboard 
+   - ### Dashboard 
 <img src="https://i.imgur.com/Lj4hX2G.png" alt="dashboard" />
 
 
-   - ###Diary 
+   - ### Diary 
 <img src="https://i.imgur.com/S9vddUS.png" alt="diary" />
 <img src="https://i.imgur.com/AYUMAnA.png" alt="diary" />
 
 
 
-   - ###Plans 
+   - ### Plans 
 <img src="https://i.imgur.com/VODu1TB.png" alt="plans1" />
 <img src="https://i.imgur.com/MnnLKc0.png" alt="plans2" />
 
