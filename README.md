@@ -1,4 +1,3 @@
-# evasive-stew-6265
 # Cronometer Clone [FitFinity]
 
 
