@@ -67,28 +67,28 @@ __
 
 
    - ### Login 
-<img src="https://i.imgur.com/iSm1buH.png" alt="login" />
+<img src="https://i.imgur.com/WHS2mUr.png" alt="login" />
 
 
 
    - ### Sign up 
-<img src="https://i.imgur.com/1imxoHn.png" alt="singup1" />
-<img src="https://i.imgur.com/L60YTQH.png" alt="singup2" />
+<img src="https://imgur.com/8fe619b8-7900-4bf0-bfc6-1e3656935044" alt="singup" />
 
 
 
-   - ### Dashboard 
-<img src="https://i.imgur.com/Lj4hX2G.png" alt="dashboard" />
+
+   - ### Pick A Avatar
+<img src="https://i.imgur.com/dCZbab7.png" />
 
 
-   - ### Diary 
-<img src="https://i.imgur.com/S9vddUS.png" alt="diary" />
-<img src="https://i.imgur.com/AYUMAnA.png" alt="diary" />
+   - ### Welcome note
+<img src="https://i.imgur.com/7gSee8I.png" />
 
 
 
-   - ### Plans 
-<img src="https://i.imgur.com/VODu1TB.png" alt="plans1" />
-<img src="https://i.imgur.com/MnnLKc0.png" alt="plans2" />
+
+   - ### Chat
+<img src="blob:https://imgur.com/78088818-5f2f-4c97-9e3d-245a56c10dab" alt="plans1" />
+
 
 
